@@ -1,0 +1,26 @@
+---
+StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  EnforcedStyle: leading
+  Enabled: true
+
+ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+  EnforcedStyle: nested
+  Enabled: true
+
+Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+FileName:
+  Description: 'Use snake_case for source file names.'
+  Enabled: true
+
+LineLength:
+  Max: 120
+  Enabled: true
