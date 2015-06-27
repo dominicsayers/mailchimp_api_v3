@@ -1,12 +1,11 @@
 require 'yaml'
 require 'restclient'
+require 'mailchimp/base'
 require 'mailchimp/account'
 require 'mailchimp/list'
 
 module Mailchimp
   class Client
-    attr_writer :db
-
     def account
       singleton Account
     end
@@ -15,17 +14,10 @@ module Mailchimp
       collection List
     end
 
-    def get(path)
-      YAML.load RestClient.get("#{url}/#{path}", auth)
-    end
-
     private
 
-    def initialize(api_key = nil, dc = nil)
+    def initialize(api_key = nil)
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
-      @dc = dc
-
-      # Do we have a valid API Key?
       fail 'Invalid API Key' unless api_key_valid?
     end
 
@@ -43,6 +35,10 @@ module Mailchimp
 
     def url
       @url ||= "https://#{dc}.api.mailchimp.com/3.0"
+    end
+
+    def get(path)
+      YAML.load RestClient.get("#{url}/#{path}", auth)
     end
 
     def collection(klass)
