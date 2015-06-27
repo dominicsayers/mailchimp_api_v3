@@ -7,8 +7,8 @@ unless ENV['NO_SIMPLECOV']
     SimpleCov.coverage_dir(dir)
   end
 
-  SimpleCov.start(:rails)
-  Coveralls.wear!(:rails) if ENV['COVERALLS_REPO_TOKEN']
+  SimpleCov.start
+  Coveralls.wear! if ENV['COVERALLS_REPO_TOKEN']
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
