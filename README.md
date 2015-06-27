@@ -3,7 +3,7 @@
 
 ![Gem Version](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)&nbsp;[![Code Climate](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)&nbsp;[![Coverage Status](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=master)
 [![Developer status](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](http://xenapto.com)
-![build status](https://circleci.com/gh/Xenapto/mailchimp_api_v3/tree/develop.svg?style=shield&circle-token=4c6f3dcc1912d30c8d903ae767f0beee94d9b4e2)
+![build status](https://circleci.com/gh/Xenapto/mailchimp_api_v3/tree/develop.svg?style=shield&circle-token=a2e39ddd53c02e4f1ccb4d89cb97f406915874c7)
 
 A simple gem to interact with Mailchimp through their API v3
 
