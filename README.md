@@ -26,7 +26,7 @@ Or install it yourself as:
 Examples:
 
 ```ruby
-Mailchimp.new(mc_key).lists
+Mailchimp.connect(mc_key).lists
 ```
 
 ## Contributing

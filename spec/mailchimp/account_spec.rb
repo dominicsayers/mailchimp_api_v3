@@ -2,19 +2,16 @@
 require 'spec_helper'
 require 'mailchimp'
 
-describe Mailchimp::List, vcr: { cassette_name: 'list' } do
-  let(:lists) { Mailchimp.connect.lists }
-  let(:list) { lists.first }
-
+describe Mailchimp::Account, vcr: { cassette_name: 'account' } do
   it 'is the expected class' do
-    expect(list).to be_a Mailchimp::List
+    expect(Mailchimp.connect.account).to be_a Mailchimp::Account
   end
 
   it 'has a name' do
-    expect(list.name).to eq 'My first list'
+    expect(Mailchimp.connect.account.name).to eq 'InSite Arts'
   end
 
   it 'has an id' do
-    expect(list.id).to eq 'e73f5910ca'
+    expect(Mailchimp.connect.account.id).to eq '1dbca289fd41b54838bcbb501'
   end
 end
