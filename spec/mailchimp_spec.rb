@@ -7,8 +7,8 @@ describe Mailchimp do
     expect(api_key?).to be_truthy
   end
 
-  it 'does not connect without a valid API key' do
-    expect { Mailchimp.connect '' }.to raise_error RuntimeError
+  it 'does not attempt to connect without an API key in the right format' do
+    expect { Mailchimp.connect '' }.to raise_error Mailchimp::APIKeyError
   end
 
   it 'connects with an API key' do
