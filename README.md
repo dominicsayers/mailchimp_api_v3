@@ -2,7 +2,7 @@
 
 
 ![Gem Version](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)
-![build status](https://img.shields.io/circleci/token/a2e39ddd53c02e4f1ccb4d89cb97f406915874c7/project/Xenapto/mailchimp_api_v3.Gt/develop.svg)
+![build status](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)
 &nbsp;[![Code Climate](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)&nbsp;[![Coverage Status](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=develop)
 [![Developer status](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](http://xenapto.com)
 
