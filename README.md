@@ -1,5 +1,4 @@
-# mailchimp_api_v3
-
+## Mailchimp API v3
 
 ![Gem Version(https://rubygems.org/gems/mailchimp_api_v3)](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)
 ![build status(https://circleci.com/gh/Xenapto/mailchimp_api_v3)](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)
@@ -9,7 +8,7 @@
 
 A simple gem to interact with Mailchimp through their API v3
 
-## Installation
+### Installation
 
 Add this line to your application's Gemfile:
 
@@ -23,7 +22,7 @@ Or install it yourself as:
 
     $ gem install mailchimp_api_v3
 
-## Usage
+### Usage
 
 Examples:
 
@@ -31,7 +30,7 @@ Examples:
 Mailchimp.connect(mc_key).lists
 ```
 
-## Contributing
+### Contributing
 
 1.  Fork it
 1.  Create your feature branch (`git checkout -b my-new-feature`)
@@ -39,7 +38,7 @@ Mailchimp.connect(mc_key).lists
 1.  Push to the branch (`git push origin my-new-feature`)
 1.  Create new Pull Request
 
-## Acknowledgements
+### Acknowledgements
 
-1.  I used the sample code in https://github.com/mailchimp/APIv3-examples as my starting point for this gem. Thanks to
+I used the sample code in https://github.com/mailchimp/APIv3-examples as my starting point for this gem. Thanks to
 the Mailchimp developers for the head start.
