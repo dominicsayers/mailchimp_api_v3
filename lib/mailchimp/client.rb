@@ -27,7 +27,7 @@ module Mailchimp
 
     def initialize(api_key = nil)
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
-      fail Mailchimp::APIKeyError, 'Invalid API key format' unless api_key_valid?
+      fail Mailchimp::APIKeyError, 'title' => 'Invalid API key format' unless api_key_valid?
     end
 
     def api_key_valid?
@@ -49,7 +49,7 @@ module Mailchimp
     def get(path)
       YAML.load RestClient.get("#{url}/#{path}", auth)
     rescue RestClient::Unauthorized => e
-      fail Mailchimp::APIKeyError, YAML.load(e.http_body)
+      raise Mailchimp::APIKeyError, YAML.load(e.http_body)
     end
 
     def collection(klass)
