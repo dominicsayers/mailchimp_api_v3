@@ -17,4 +17,14 @@ describe Mailchimp::List, vcr: { cassette_name: 'list' } do
   it 'has an id' do
     expect(list.id).to eq 'e73f5910ca'
   end
+
+  it 'has an id + name method' do
+    expect(list.id_and_name).to eq 'e73f5910ca___My first list'
+  end
+
+  it 'has a members collection' do
+    members = list.members
+    expect(members).to be_an Array
+    expect(members.sample).to be_a Mailchimp::List::Member
+  end
 end

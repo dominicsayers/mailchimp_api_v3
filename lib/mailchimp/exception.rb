@@ -9,4 +9,7 @@ module Mailchimp
       @data[symbol.id2name]
     end
   end
+
+  class UnknownAttribute < StandardError
+  end
 end

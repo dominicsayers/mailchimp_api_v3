@@ -7,12 +7,14 @@ require 'mailchimp/list'
 
 module Mailchimp
   class Client
+    KEY = ''
+
     def account
-      singleton Account
+      instance Account, KEY, get(KEY)
     end
 
     def lists
-      collection List
+      collection List, KEY
     end
 
     def connected?
@@ -21,6 +23,11 @@ module Mailchimp
       false
     else
       true
+    end
+
+    def collection(klass, path)
+      child_path = "#{path}/#{klass::KEY}"
+      get(child_path)[klass::KEY].map { |i| instance klass, child_path, i }
     end
 
     private
@@ -47,21 +54,13 @@ module Mailchimp
     end
 
     def get(path)
-      YAML.load RestClient.get("#{url}/#{path}", auth)
+      YAML.load RestClient.get("#{url}#{path}", auth)
     rescue RestClient::Unauthorized => e
       raise Mailchimp::APIKeyError, YAML.load(e.http_body)
     end
 
-    def collection(klass)
-      response(klass)[klass::KEY].map { |i| klass.new i }
-    end
-
-    def singleton(klass)
-      klass.new response(klass)
-    end
-
-    def response(klass)
-      get klass::KEY
+    def instance(klass, path, data)
+      klass.new self, path, data
     end
   end
 end

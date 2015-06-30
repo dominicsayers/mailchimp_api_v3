@@ -15,3 +15,15 @@ describe Mailchimp::APIKeyError, vcr: { cassette_name: 'exception' } do
     }
   end
 end
+
+describe Mailchimp::UnknownAttribute, vcr: { cassette_name: 'exception' } do
+  let(:account) { Mailchimp.connect.account }
+
+  it 'returns a known attribute' do
+    expect { account.name }.not_to raise_error
+  end
+
+  it 'fails if we ask for an unknown attribute' do
+    expect { account.blarbleferry }.to raise_error Mailchimp::UnknownAttribute
+  end
+end
