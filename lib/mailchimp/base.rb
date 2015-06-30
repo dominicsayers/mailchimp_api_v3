@@ -4,6 +4,7 @@ module Mailchimp
       @client = client
       @collection_path = collection_path
       @data = data
+      #- puts @data # debug
     end
 
     def path
@@ -16,7 +17,7 @@ module Mailchimp
 
     def method_missing(symbol)
       key = symbol.id2name
-      fail Mailchimp::UnknownAttribute(key) unless @data.key? key
+      fail Mailchimp::Exception::UnknownAttribute unless @data.key? key
       @data[key]
     end
   end

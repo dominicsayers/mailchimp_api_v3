@@ -1,6 +1,6 @@
 module Mailchimp
   class Account
-    KEY = ''
+    PATH_KEY = DATA_KEY = ''
     include Base
 
     def id

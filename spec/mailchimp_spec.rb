@@ -9,7 +9,7 @@ describe Mailchimp do
 
   it 'does not attempt to connect without an API key in the right format' do
     expect { Mailchimp.connect '' }.to raise_error { |e|
-      expect(e).to be_a Mailchimp::APIKeyError
+      expect(e).to be_a Mailchimp::Exception::APIKeyError
       expect(e.message).to eq 'Invalid API key format'
     }
   end

@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp'
 
-describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
+describe Mailchimp::List::Member, vcr: { cassette_name: 'mailchimp' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
   let(:member) { list.members.first }
@@ -12,7 +12,7 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
   end
 
   it 'has a name' do
-    expect(member.name).to eq 'My first member'
+    expect(member.name).to eq 'Ann Example'
   end
 
   it 'has an id' do

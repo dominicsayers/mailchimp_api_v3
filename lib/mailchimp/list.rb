@@ -1,12 +1,17 @@
 require 'mailchimp/member'
+require 'mailchimp/interest_category'
 
 module Mailchimp
   class List
-    KEY = 'lists'
+    PATH_KEY = DATA_KEY = 'lists'
     include Base
 
     def members
       collection Member
+    end
+
+    def interest_categories
+      collection InterestCategory
     end
 
     def id_and_name

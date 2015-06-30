@@ -7,34 +7,34 @@ require 'mailchimp/list'
 
 module Mailchimp
   class Client
-    KEY = ''
+    PATH_KEY = DATA_KEY = ''
 
     def account
-      instance Account, KEY, get(KEY)
+      instance Account, PATH_KEY, get(PATH_KEY)
     end
 
     def lists
-      collection List, KEY
+      collection List, PATH_KEY
     end
 
     def connected?
       account
-    rescue Mailchimp::APIKeyError
+    rescue Mailchimp::Exception::APIKeyError
       false
     else
       true
     end
 
     def collection(klass, path)
-      child_path = "#{path}/#{klass::KEY}"
-      get(child_path)[klass::KEY].map { |i| instance klass, child_path, i }
+      child_path = "#{path}/#{klass::PATH_KEY}"
+      get(child_path)[klass::DATA_KEY].map { |i| instance klass, child_path, i }
     end
 
     private
 
     def initialize(api_key = nil)
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
-      fail Mailchimp::APIKeyError, 'title' => 'Invalid API key format' unless api_key_valid?
+      fail Mailchimp::Exception::APIKeyError, 'title' => 'Invalid API key format' unless api_key_valid?
     end
 
     def api_key_valid?
@@ -54,9 +54,10 @@ module Mailchimp
     end
 
     def get(path)
+      puts "#{url}#{path}" # debug
       YAML.load RestClient.get("#{url}#{path}", auth)
     rescue RestClient::Unauthorized => e
-      raise Mailchimp::APIKeyError, YAML.load(e.http_body)
+      raise Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
     end
 
     def instance(klass, path, data)

@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp'
 
-describe Mailchimp::Account, vcr: { cassette_name: 'account' } do
+describe Mailchimp::Account, vcr: { cassette_name: 'mailchimp' } do
   it 'is the expected class' do
     expect(Mailchimp.connect.account).to be_a Mailchimp::Account
   end

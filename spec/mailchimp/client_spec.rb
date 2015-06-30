@@ -2,12 +2,12 @@
 require 'spec_helper'
 require 'mailchimp'
 
-describe Mailchimp::Client, vcr: { cassette_name: 'client' } do
+describe Mailchimp::Client, vcr: { cassette_name: 'mailchimp' } do
   context 'unauthorized API key' do
     let(:bad_key) { 'xxxxxxxxxx-us11' }
 
     it 'raises an exception if we try to get data' do
-      expect { Mailchimp.connect(bad_key).account }.to raise_error Mailchimp::APIKeyError
+      expect { Mailchimp.connect(bad_key).account }.to raise_error Mailchimp::Exception::APIKeyError
     end
 
     it 'says it is not connected' do

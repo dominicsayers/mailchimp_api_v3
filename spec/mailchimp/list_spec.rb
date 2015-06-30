@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp'
 
-describe Mailchimp::List, vcr: { cassette_name: 'list' } do
+describe Mailchimp::List, vcr: { cassette_name: 'mailchimp' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
 
@@ -26,5 +26,11 @@ describe Mailchimp::List, vcr: { cassette_name: 'list' } do
     members = list.members
     expect(members).to be_an Array
     expect(members.sample).to be_a Mailchimp::List::Member
+  end
+
+  it 'has a interest_categories collection' do
+    interest_categories = list.interest_categories
+    expect(interest_categories).to be_an Array
+    expect(interest_categories.sample).to be_a Mailchimp::List::InterestCategory
   end
 end
