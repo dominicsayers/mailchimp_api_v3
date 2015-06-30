@@ -3,7 +3,7 @@ require 'restclient'
 require 'mailchimp/exception'
 require 'mailchimp/base'
 require 'mailchimp/account'
-require 'mailchimp/list'
+require 'mailchimp/lists'
 
 module Mailchimp
   class Client
@@ -14,7 +14,7 @@ module Mailchimp
     end
 
     def lists
-      collection List, PATH_KEY
+      Lists.new self, PATH_KEY
     end
 
     def connected?
@@ -23,6 +23,13 @@ module Mailchimp
       false
     else
       true
+    end
+
+    def get(path)
+      # puts "#{url}#{path}" # debug
+      YAML.load RestClient.get("#{url}#{path}", auth)
+    rescue RestClient::Unauthorized => e
+      raise Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
     end
 
     def collection(klass, path)
@@ -51,13 +58,6 @@ module Mailchimp
 
     def url
       @url ||= "https://#{dc}.api.mailchimp.com/3.0"
-    end
-
-    def get(path)
-      puts "#{url}#{path}" # debug
-      YAML.load RestClient.get("#{url}#{path}", auth)
-    rescue RestClient::Unauthorized => e
-      raise Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
     end
 
     def instance(klass, path, data)

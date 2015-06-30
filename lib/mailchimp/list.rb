@@ -3,7 +3,6 @@ require 'mailchimp/interest_category'
 
 module Mailchimp
   class List
-    PATH_KEY = DATA_KEY = 'lists'
     include Base
 
     def members

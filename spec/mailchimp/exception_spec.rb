@@ -31,3 +31,15 @@ describe Mailchimp::Exception::UnknownAttribute, vcr: { cassette_name: 'mailchim
     expect { account.blarbleferry }.to raise_error Mailchimp::Exception::UnknownAttribute
   end
 end
+
+describe Mailchimp::Exception::MissingId, vcr: { cassette_name: 'mailchimp' } do
+  let(:account) { Mailchimp.connect.account }
+
+  it 'accepts data with an id' do
+    expect { account.fail_unless_id_in 'id' => 1 }.not_to raise_error
+  end
+
+  it 'fails if we supply data without an id' do
+    expect { account.fail_unless_id_in 'name' => 'Terry' }.to raise_error Mailchimp::Exception::MissingId
+  end
+end

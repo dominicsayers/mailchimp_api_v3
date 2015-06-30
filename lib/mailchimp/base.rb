@@ -15,10 +15,21 @@ module Mailchimp
       @client.collection klass, path
     end
 
-    def method_missing(symbol)
+    def method_missing(symbol, options = {})
       key = symbol.id2name
-      fail Mailchimp::Exception::UnknownAttribute unless @data.key? key
+      fail_unless_exists key, options
       @data[key]
+    end
+
+    def fail_unless_exists(key, options = {})
+      return if @data.key? key
+      message = options == {} ? key : "#{key}: #{options}"
+      fail Mailchimp::Exception::UnknownAttribute, message
+    end
+
+    def fail_unless_id_in(data = {})
+      return if data.key? 'id'
+      fail Mailchimp::Exception::MissingId, data
     end
   end
 end
