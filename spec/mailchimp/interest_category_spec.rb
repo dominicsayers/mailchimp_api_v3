@@ -24,14 +24,4 @@ describe Mailchimp::List::InterestCategory, vcr: { cassette_name: 'mailchimp' } 
     expect(interests).to be_an Array
     expect(interests.sample).to be_a Mailchimp::List::InterestCategory::Interest
   end
-
-  it 'can add a new interest to the category' do
-    expect { interest_category.update name: 'Green' }.to change {
-      interest_category.interests.count
-    }.from(1).to(2)
-
-    expect { interest_category.update name: 'Green' }.not_to change {
-      interest_category.interests.count
-    }
-  end
 end

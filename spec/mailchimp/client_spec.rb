@@ -39,7 +39,7 @@ describe Mailchimp::Client, vcr: { cassette_name: 'mailchimp' } do
     let(:client) { Mailchimp::Client.new }
 
     it 'eventually raises the exception' do
-      allow(client).to receive(:remote).and_raise SocketError.new('test message')
+      allow(client).to receive(:remote_no_payload).and_raise SocketError.new('test message')
 
       expect { client.account }.to raise_error { |e|
         expect(e).to be_an(SocketError)
@@ -48,8 +48,8 @@ describe Mailchimp::Client, vcr: { cassette_name: 'mailchimp' } do
     end
 
     it 'only raises the exception after several retries' do
-      allow(client).to receive(:remote).twice.and_raise SocketError.new('test message')
-      allow(client).to receive(:remote).and_return '"id":1'
+      allow(client).to receive(:remote_no_payload).twice.and_raise SocketError.new('test message')
+      allow(client).to receive(:remote_no_payload).and_return '"id":1'
       expect { client.account }.not_to raise_error
     end
   end
