@@ -25,8 +25,9 @@ module Mailchimp
     end
 
     def get(path = '', options = {})
-      puts "#{url}#{path}#{to_query(options)}" # debug
-      YAML.load remote(:get, "#{url}#{path}#{to_query(options)}")
+      url = "#{url_stub}#{path}#{to_query(options)}"
+      # puts url # debug
+      YAML.load remote(:get, url)
     rescue RestClient::Unauthorized => e
       raise Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
     rescue *RETRY_EXCEPTIONS => e
@@ -35,15 +36,12 @@ module Mailchimp
       retry
     end
 
-    def remote(method = :get, path = '')
-      RestClient.__send__ method, path, auth
-    end
-
     private
 
-    def initialize(api_key = nil)
+    def initialize(api_key = nil, extra_headers = {})
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
       fail Mailchimp::Exception::APIKeyError, 'title' => 'Invalid API key format' unless api_key_valid?
+      @extra_headers = extra_headers
     end
 
     def api_key_valid?
@@ -54,12 +52,19 @@ module Mailchimp
       @dc ||= @api_key.split('-')[1]
     end
 
-    def auth
-      @auth ||= { Authorization: "apikey #{@api_key}" }
+    def remote(method = :get, path = '')
+      RestClient.__send__ method, path, headers
     end
 
-    def url
-      @url ||= "https://#{dc}.api.mailchimp.com/3.0"
+    def headers
+      @headers ||= {
+        'Authorization' => "apikey #{@api_key}",
+        'User-Agent' => 'Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3'
+      }.merge @extra_headers
+    end
+
+    def url_stub
+      @url_stub ||= "https://#{dc}.api.mailchimp.com/3.0"
     end
 
     def to_query(options = {})
