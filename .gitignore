@@ -1,3 +1,6 @@
+# Put your test API key in this file:
+api_key.yml
+
 *.gem
 *.rbc
 /.config
