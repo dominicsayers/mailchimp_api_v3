@@ -1,7 +1,8 @@
 require 'yaml'
 require 'restclient'
 require 'mailchimp/exception'
-require 'mailchimp/base'
+require 'mailchimp/collection'
+require 'mailchimp/instance'
 require 'mailchimp/account'
 require 'mailchimp/lists'
 

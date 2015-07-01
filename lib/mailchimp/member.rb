@@ -2,7 +2,7 @@ module Mailchimp
   class List
     class Member
       PATH_KEY = DATA_KEY = 'members'
-      include Base
+      include Instance
 
       def name
         return @name if @name

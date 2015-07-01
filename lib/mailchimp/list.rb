@@ -3,7 +3,7 @@ require 'mailchimp/interest_category'
 
 module Mailchimp
   class List
-    include Base
+    include Instance
 
     def members
       collection Member
