@@ -1,6 +1,6 @@
 module Mailchimp
   module Exception
-    class APIKeyError < StandardError
+    class APIKeyError < RuntimeError
       def initialize(data)
         @data = data
         super title
@@ -11,10 +11,10 @@ module Mailchimp
       end
     end
 
-    class UnknownAttribute < StandardError
+    class UnknownAttribute < RuntimeError
     end
 
-    class MissingId < StandardError
+    class MissingId < RuntimeError
     end
   end
 end

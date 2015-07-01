@@ -9,11 +9,11 @@ require 'mailchimp/lists'
 module Mailchimp
   class Client
     def account
-      Account.new self, '', get('')
+      Account.new self, get
     end
 
     def lists
-      Lists.new self, ''
+      Lists.new self
     end
 
     def connected?
@@ -24,11 +24,19 @@ module Mailchimp
       true
     end
 
-    def get(path, data_key = nil, options = {})
-      data = YAML.load(RestClient.get("#{url}#{path}#{to_query(data_key, options)}", auth))
-      data_key ? data[data_key] : data
+    def get(path = '', options = {})
+      puts "#{url}#{path}#{to_query(options)}" # debug
+      YAML.load remote(:get, "#{url}#{path}#{to_query(options)}")
     rescue RestClient::Unauthorized => e
       raise Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
+    rescue *RETRY_EXCEPTIONS => e
+      @retries ||= 0
+      raise e if (@retries += 1) > 3
+      retry
+    end
+
+    def remote(method = :get, path = '')
+      RestClient.__send__ method, path, auth
     end
 
     private
@@ -54,18 +62,24 @@ module Mailchimp
       @url ||= "https://#{dc}.api.mailchimp.com/3.0"
     end
 
-    def to_query(data_key = nil, options = {})
-      default = data_key ? { 'exclude_fields' => "#{data_key}._links" } : {}
-      params = default.merge(options)
+    def to_query(options = {})
       query = ''
       delim = '?'
 
-      params.each do |k, v|
+      query_defaults_from(options).each do |k, v|
         query += "#{delim}#{k}=#{v}"
         delim = '&'
       end
 
       query
     end
+
+    def query_defaults_from(options = {})
+      data_key = options.delete 'data_key'
+      linksloc = data_key ? "#{data_key}." : ''
+      { 'exclude_fields' => "#{linksloc}_links" }.merge(options)
+    end
+
+    RETRY_EXCEPTIONS = [SocketError]
   end
 end

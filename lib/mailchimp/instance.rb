@@ -1,6 +1,6 @@
 module Mailchimp
   module Instance
-    def initialize(client, collection_path, data)
+    def initialize(client, data, collection_path = '')
       @client = client
       @collection_path = collection_path
       @data = data

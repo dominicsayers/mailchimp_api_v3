@@ -5,12 +5,12 @@ module Mailchimp
   class List
     include Instance
 
-    def members
-      Members.new @client, path
+    def members(options = {})
+      Members.new @client, path, options
     end
 
-    def interest_categories
-      InterestCategories.new @client, path
+    def interest_categories(options = {})
+      InterestCategories.new @client, path, options
     end
 
     def id_and_name
