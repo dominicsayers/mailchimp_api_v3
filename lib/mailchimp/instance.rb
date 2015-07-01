@@ -11,10 +11,6 @@ module Mailchimp
       @path ||= "#{@collection_path}/#{@data['id']}"
     end
 
-    def collection(klass)
-      @client.collection klass, path
-    end
-
     def method_missing(symbol, options = {})
       key = symbol.id2name
       fail_unless_exists key, options

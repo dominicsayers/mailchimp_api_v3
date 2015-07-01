@@ -1,16 +1,16 @@
-require 'mailchimp/member'
-require 'mailchimp/interest_category'
+require 'mailchimp/members'
+require 'mailchimp/interest_categories'
 
 module Mailchimp
   class List
     include Instance
 
     def members
-      collection Member
+      Members.new @client, path
     end
 
     def interest_categories
-      collection InterestCategory
+      InterestCategories.new @client, path
     end
 
     def id_and_name

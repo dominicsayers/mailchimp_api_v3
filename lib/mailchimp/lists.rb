@@ -2,8 +2,20 @@ require 'mailchimp/list'
 
 module Mailchimp
   class Lists < Array
-    PATH_KEY = DATA_KEY = 'lists'
-    CHILD_CLASS = List
+    class << self
+      def path_key
+        'lists'
+      end
+
+      def data_key
+        'lists'
+      end
+
+      def child_class
+        List
+      end
+    end
+
     include Collection
   end
 end

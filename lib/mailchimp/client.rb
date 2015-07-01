@@ -8,14 +8,12 @@ require 'mailchimp/lists'
 
 module Mailchimp
   class Client
-    PATH_KEY = DATA_KEY = ''
-
     def account
-      instance Account, PATH_KEY, get(PATH_KEY)
+      Account.new self, '', get('')
     end
 
     def lists
-      Lists.new self, PATH_KEY
+      Lists.new self, ''
     end
 
     def connected?
@@ -26,16 +24,11 @@ module Mailchimp
       true
     end
 
-    def get(path)
-      # puts "#{url}#{path}" # debug
-      YAML.load RestClient.get("#{url}#{path}", auth)
+    def get(path, data_key = nil, options = {})
+      data = YAML.load(RestClient.get("#{url}#{path}#{to_query(data_key, options)}", auth))
+      data_key ? data[data_key] : data
     rescue RestClient::Unauthorized => e
       raise Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
-    end
-
-    def collection(klass, path)
-      child_path = "#{path}/#{klass::PATH_KEY}"
-      get(child_path)[klass::DATA_KEY].map { |i| instance klass, child_path, i }
     end
 
     private
@@ -61,8 +54,18 @@ module Mailchimp
       @url ||= "https://#{dc}.api.mailchimp.com/3.0"
     end
 
-    def instance(klass, path, data)
-      klass.new self, path, data
+    def to_query(data_key = nil, options = {})
+      default = data_key ? { 'exclude_fields' => "#{data_key}._links" } : {}
+      params = default.merge(options)
+      query = ''
+      delim = '?'
+
+      params.each do |k, v|
+        query += "#{delim}#{k}=#{v}"
+        delim = '&'
+      end
+
+      query
     end
   end
 end

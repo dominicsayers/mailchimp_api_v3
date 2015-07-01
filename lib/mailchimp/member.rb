@@ -1,7 +1,6 @@
 module Mailchimp
   class List
     class Member
-      PATH_KEY = DATA_KEY = 'members'
       include Instance
 
       def name
