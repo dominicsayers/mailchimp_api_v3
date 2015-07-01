@@ -1,7 +1,7 @@
 ## Mailchimp API v3
 
-![Gem Version(https://rubygems.org/gems/mailchimp_api_v3)](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)
-![build status(https://circleci.com/gh/Xenapto/mailchimp_api_v3)](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)
+![Gem Version](https://rubygems.org/gems/mailchimp_api_v3)](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)
+![build status](https://circleci.com/gh/Xenapto/mailchimp_api_v3)](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)
 [![Code Climate](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)
 [![Coverage Status](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=develop)
 [![Developer status](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](http://xenapto.com)
