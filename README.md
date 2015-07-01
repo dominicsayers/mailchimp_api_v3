@@ -1,6 +1,6 @@
 ## Mailchimp API v3
 
-[!(https://rubygems.org/gems/mailchimp_api_v3)](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)
+![https://rubygems.org/gems/mailchimp_api_v3](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)
 
 
 ![build status(https://circleci.com/gh/Xenapto/mailchimp_api_v3)](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)
