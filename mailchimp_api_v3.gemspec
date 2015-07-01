@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '> 1.8'
   spec.add_development_dependency 'rspec', '~> 3.3'
+  spec.add_development_dependency 'rspec_junit_formatter', '~> 0.2'
   spec.add_development_dependency 'gem-release', '~> 0.7'
   spec.add_development_dependency 'simplecov', '~> 0.10'
   spec.add_development_dependency 'coveralls', '~> 0.8'
