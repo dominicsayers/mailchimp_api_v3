@@ -20,15 +20,22 @@ module Mailchimp
       @path ||= "#{@parent_path}/#{self.class.path_key}"
     end
 
-    def find(data)
-      find_each do |instance|
-        matches = data.each do |k, v|
-          break false unless instance.__send__(k).casecmp(v).zero? # case-insensitive comparison
-          true
-        end
+    def where(data, limit = nil)
+      instances = []
 
-        break instance if matches
+      find_each do |instance|
+        if instance.matches? data
+          instances << instance
+          break if instances.count == limit
+        end
       end
+
+      instances
+    end
+
+    def find_by(data)
+      instances = where(data, 1)
+      instances ? instances.first : nil
     end
 
     def create(data)
@@ -37,7 +44,7 @@ module Mailchimp
     end
 
     def first_or_create(data)
-      instance = find(data)
+      instance = find_by(data)
       return instance if instance
       create(data)
     end

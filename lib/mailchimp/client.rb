@@ -29,7 +29,7 @@ module Mailchimp
 
     def initialize(api_key = nil, extra_headers = {})
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
-      fail Mailchimp::Exception::APIKeyError, 'title' => 'Invalid API key format' unless api_key_valid?
+      fail Mailchimp::Exception::APIKeyError, 'title' => "Invalid API key format: #{@api_key}" unless api_key_valid?
       @extra_headers = extra_headers
     end
 

@@ -4,6 +4,8 @@ module Mailchimp
   class List
     class InterestCategory
       class Interests < Array
+        include Collection
+
         class << self
           def path_key
             'interests'
@@ -17,8 +19,6 @@ module Mailchimp
             Interest
           end
         end
-
-        include Collection
       end
     end
   end

@@ -3,6 +3,8 @@ require 'mailchimp/interest_category'
 module Mailchimp
   class List
     class InterestCategories < Array
+      include Collection
+
       class << self
         def path_key
           'interest-categories'
@@ -16,8 +18,6 @@ module Mailchimp
           InterestCategory
         end
       end
-
-      include Collection
     end
   end
 end

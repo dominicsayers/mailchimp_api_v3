@@ -43,3 +43,17 @@ describe Mailchimp::Exception::MissingId, vcr: { cassette_name: 'mailchimp' } do
     expect { account.fail_unless_id_in 'name' => 'Terry' }.to raise_error Mailchimp::Exception::MissingId
   end
 end
+
+describe Mailchimp::Exception::BadRequest do
+  it 'raises a Duplicate exception if the message says so' do
+    data = { 'detail' => 'The thing already exists, idiot' }
+    expect { Mailchimp::Exception.parse_invalid_resource_exception data }
+      .to raise_error Mailchimp::Exception::Duplicate
+  end
+
+  it 'raises a BadRequest exception otherwise' do
+    data = { 'detail' => 'The thing is an idiot' }
+    expect { Mailchimp::Exception.parse_invalid_resource_exception data }
+      .to raise_error Mailchimp::Exception::BadRequest
+  end
+end
