@@ -1,9 +1,11 @@
 module Mailchimp
   class List
     class InterestCategory
-      class Interest
-        include Instance::InstanceMethods
-        extend Instance::ClassMethods
+      Interest = Class.new(Instance)
+
+      class Interests < Collection
+        PATH_KEY = DATA_KEY = 'interests'
+        CHILD_CLASS = Interest
       end
     end
   end
