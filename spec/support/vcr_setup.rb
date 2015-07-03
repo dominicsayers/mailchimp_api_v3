@@ -9,7 +9,7 @@ VCR.configure do |c|
     # record: :new_episodes,
     erb: true,
     decode_compressed_response: true,
-    match_requests_on: [:method, :uri, :headers, :body],
+    match_requests_on: %i(method uri headers body),
     allow_playback_repeats: true
   }
 end
