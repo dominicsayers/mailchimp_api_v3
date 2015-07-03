@@ -4,21 +4,10 @@ module Mailchimp
   class List
     class InterestCategory
       class Interests < Array
+        PATH_KEY = DATA_KEY = 'interests'
+        CHILD_CLASS = Interest
+
         include Collection
-
-        class << self
-          def path_key
-            'interests'
-          end
-
-          def data_key
-            'interests'
-          end
-
-          def child_class
-            Interest
-          end
-        end
       end
     end
   end

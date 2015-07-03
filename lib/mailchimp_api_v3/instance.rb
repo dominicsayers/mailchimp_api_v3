@@ -27,8 +27,8 @@ module Mailchimp
       def subclass_from(collection_class, options = {})
         if options.is_a? String
           # Use it as an id for an instance
-          child_path = "#{path}/#{collection_class.path_key}"
-          collection_class.child_class.get @client, child_path, options
+          child_path = "#{path}/#{collection_class::PATH_KEY}"
+          collection_class::CHILD_CLASS.get @client, child_path, options
         else
           # Get the collection
           collection_class.new @client, path, options

@@ -9,21 +9,21 @@ module Mailchimp
       end
 
       def fetch_options
-        links_delim = self.class.data_key.empty? ? '' : '.'
+        links_delim = self.class::DATA_KEY.empty? ? '' : '.'
 
         {
-          'exclude_fields' => "#{self.class.data_key}#{links_delim}_links",
+          'exclude_fields' => "#{self.class::DATA_KEY}#{links_delim}_links",
           'offset' => offset,
           'count' => page_size
         }
       end
 
       def page_array
-        @page_array ||= page[self.class.data_key]
+        @page_array ||= page[self.class::DATA_KEY]
       end
 
       def page_children
-        @page_children ||= page_array.map { |d| self.class.child_class.new @client, d, path }
+        @page_children ||= page_array.map { |d| self.class::CHILD_CLASS.new @client, d, path }
       end
 
       def offset
