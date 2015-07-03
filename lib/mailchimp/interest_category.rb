@@ -3,16 +3,13 @@ require 'mailchimp/interests'
 module Mailchimp
   class List
     class InterestCategory
-      VALID_TYPES = %w(checkboxes dropdown radio hidden)
-      include Instance
+      #- VALID_TYPES = %w(checkboxes dropdown radio hidden)
 
-      def interests
-        Interests.new @client, path
-      end
+      include Instance::InstanceMethods
+      extend Instance::ClassMethods
 
-      def update(data, options = { check_id: true })
-        fail_unless_id_in data if options[:check_id]
-        @client.post path, data
+      def interests(options = {})
+        subclass_from Interests, options
       end
     end
   end

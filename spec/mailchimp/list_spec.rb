@@ -33,4 +33,23 @@ describe Mailchimp::List, vcr: { cassette_name: 'mailchimp' } do
     expect(interest_categories).to be_an Array
     expect(interest_categories.sample).to be_a Mailchimp::List::InterestCategory
   end
+
+  context 'get a specific member' do
+    let(:email_address) { 'ann@sayers.cc' }
+    let(:id) { '140b91c107d2058dee730e75be0b1151' }
+
+    it 'gets a member by id' do
+      member = list.members id
+      expect(member).to be_a Mailchimp::List::Member
+      expect(member.id).to eq id
+      expect(member.email_address).to eq email_address
+    end
+
+    it 'gets a member by email address' do
+      member = list.members email_address
+      expect(member).to be_a Mailchimp::List::Member
+      expect(member.id).to eq id
+      expect(member.email_address).to eq email_address
+    end
+  end
 end

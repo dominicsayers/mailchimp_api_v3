@@ -16,7 +16,7 @@ describe Mailchimp::List::InterestCategories, vcr: { cassette_name: 'mailchimp' 
 
   it 'finds a matching instance' do
     data = { 'title' => 'Colors' }
-    interest_category = interest_categories.find data
+    interest_category = interest_categories.find_by data
     expect(interest_category).to be_a Mailchimp::List::InterestCategory
     expect(interest_category.id).to eq '2ce011eb68'
   end

@@ -2,6 +2,8 @@ require 'mailchimp/list'
 
 module Mailchimp
   class Lists < Array
+    include Collection
+
     class << self
       def path_key
         'lists'
@@ -15,7 +17,5 @@ module Mailchimp
         List
       end
     end
-
-    include Collection
   end
 end

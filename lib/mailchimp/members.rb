@@ -3,6 +3,8 @@ require 'mailchimp/member'
 module Mailchimp
   class List
     class Members < Array
+      include Collection
+
       class << self
         def path_key
           'members'
@@ -16,8 +18,6 @@ module Mailchimp
           Member
         end
       end
-
-      include Collection
     end
   end
 end

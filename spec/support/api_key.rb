@@ -1,7 +1,11 @@
 require 'yaml'
 
-ENV['MAILCHIMP_API_KEY'] ||= YAML.load_file('api_key.yml')['api_key'] if File.exist?('api_key.yml')
-
-def api_key?
-  ENV.key? 'MAILCHIMP_API_KEY'
+unless ENV['MAILCHIMP_API_KEY']
+  if File.exist?('api_key.yml')
+    ENV['MAILCHIMP_API_KEY'] = YAML.load_file('api_key.yml')['api_key']
+  else
+    ENV['MAILCHIMP_API_KEY'] = 'vcr_playback-us11' # Will successfully replay the VCR cassettes
+  end
 end
+
+ENV['MAILCHIMP_DC'] = ENV['MAILCHIMP_API_KEY'].split('-')[1]

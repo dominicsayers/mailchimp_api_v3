@@ -22,9 +22,7 @@ module Mailchimp
 
       def managed_remote(path = '', options = {}, method = :get, payload = nil)
         headers_and_params = headers.merge params_from(options)
-        url = "#{url_stub}#{path}"
-        # puts url # debug
-        YAML.load naked_remote(url, method, headers_and_params, payload)
+        YAML.load naked_remote("#{url_stub}#{path}", method, headers_and_params, payload)
       rescue *RETRY_EXCEPTIONS => e
         @retries ||= 0
         raise e if (@retries += 1) > 3
@@ -45,6 +43,7 @@ module Mailchimp
       end
 
       def naked_remote(url, method, headers_and_params, payload = nil)
+        # puts url # debug
         if [:get, :delete, :head, :options].include? method
           remote_no_payload(url, method, headers_and_params)
         else

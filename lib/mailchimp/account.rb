@@ -1,7 +1,6 @@
 module Mailchimp
   class Account
-    PATH_KEY = DATA_KEY = ''
-    include Instance
+    include Instance::InstanceMethods
 
     def id
       account_id
