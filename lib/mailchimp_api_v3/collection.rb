@@ -1,7 +1,6 @@
-require 'mailchimp_api_v3/collection/paging'
-
 module Mailchimp
-  module Collection
+  class Collection < Array
+    require 'mailchimp_api_v3/collection/paging' # Don't require before class inherits from Array
     include Paging
 
     def initialize(client, parent_path = '', options = {})
@@ -17,7 +16,7 @@ module Mailchimp
     end
 
     def path
-      @path ||= "#{@parent_path}/#{self.class.path_key}"
+      @path ||= "#{@parent_path}/#{self.class::PATH_KEY}"
     end
 
     def where(data, limit = nil)
@@ -40,7 +39,7 @@ module Mailchimp
 
     def create(data)
       response = @client.post data, path
-      self.class.child_class.new @client, response, path
+      self.class::CHILD_CLASS.new @client, response, path
     end
 
     def first_or_create(data)

@@ -1,7 +1,5 @@
 module Mailchimp
-  class Account
-    include Instance::InstanceMethods
-
+  class Account < Instance
     def id
       account_id
     end

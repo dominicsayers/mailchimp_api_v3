@@ -1,9 +1,6 @@
 module Mailchimp
   class List
-    class Member
-      include Instance::InstanceMethods
-      extend Instance::ClassMethods
-
+    class Member < Instance
       def first_name
         @first_name ||= merge_fields['FNAME']
       end
@@ -50,6 +47,11 @@ module Mailchimp
           clean_data.delete('last_name') || name_parts[1]
         ]
       end
+    end
+
+    class Members < Collection
+      PATH_KEY = DATA_KEY = 'members'
+      CHILD_CLASS = Member
     end
   end
 end

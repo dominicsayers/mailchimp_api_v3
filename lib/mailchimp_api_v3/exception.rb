@@ -23,22 +23,11 @@ module Mailchimp
       end
     end
 
-    class APIKeyError < DataException
-    end
-
-    class Duplicate < DataException
-    end
-
-    class MissingField < DataException
-    end
-
-    class BadRequest < DataException
-    end
-
-    class UnknownAttribute < RuntimeError
-    end
-
-    class MissingId < RuntimeError
-    end
+    APIKeyError = Class.new(DataException)
+    Duplicate = Class.new(DataException)
+    MissingField = Class.new(DataException)
+    BadRequest = Class.new(DataException)
+    UnknownAttribute = Class.new(RuntimeError)
+    MissingId = Class.new(RuntimeError)
   end
 end

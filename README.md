@@ -1,12 +1,12 @@
 ## Mailchimp API v3
+[![Gem Version](https://badge.fury.io/rb/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
+[![Gem downloads](https://img.shields.io/gem/dt/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
+[![Build status](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/Xenapto/mailchimp_api_v3)
+[![Code quality](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)
+[![Coverage](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=develop)
+[![Dependency Status](https://gemnasium.com/Xenapto/mailchimp_api_v3.svg)](https://gemnasium.com/Xenapto/mailchimp_api_v3)
 
-[![](http://img.shields.io/gem/v/mailchimp_api_v3.svg?style=flat)](https://rubygems.org/gems/mailchimp_api_v3)
-[![](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/Xenapto/mailchimp_api_v3)
-[![](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)
-[![](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=develop)
-[![](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](http://xenapto.com)
-
-A simple gem to interact with Mailchimp through their API v3
+A simple gem to interact with Mailchimp through the Mailchimp API v3
 
 ### Project status
 
@@ -30,7 +30,7 @@ Or install it yourself as:
 
 ### Usage
 
-The Mailchimp API documentation is here: http://kb.mailchimp.com/api. Their suggstions for subscriber management are here: http://kb.mailchimp.com/api/article/how-to-manage-subscribers.
+The Mailchimp API documentation is here: http://kb.mailchimp.com/api. Their suggestions for subscriber management are here: http://kb.mailchimp.com/api/article/how-to-manage-subscribers.
 
 To connect to the Mailchimp API you need to supply an API key. You can do this explicitly when you connect, or you can set an environment variable `MAILCHIMP_API_KEY`.
 
@@ -54,9 +54,12 @@ list = mailchimp.lists.find_by name: 'My first list'
 mailchimp = Mailchimp.connect
 member = mailchimp.lists('e73f5910ca').members('ann@example.com')
 member.name # => "Ann Example"
+member.update last_name: 'Williams'
 ```
 
 ### Contributing
+
+[![Developer](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](http://xenapto.com)
 
 1.  Fork it
 1.  Create your feature branch (`git checkout -b my-new-feature`)

@@ -1,8 +1,8 @@
-require 'mailchimp_api_v3/exception'
 require 'mailchimp_api_v3/collection'
 require 'mailchimp_api_v3/instance'
+require 'mailchimp_api_v3/exception'
 require 'mailchimp_api_v3/account'
-require 'mailchimp_api_v3/lists'
+require 'mailchimp_api_v3/list'
 require 'mailchimp_api_v3/client/remote'
 
 module Mailchimp
