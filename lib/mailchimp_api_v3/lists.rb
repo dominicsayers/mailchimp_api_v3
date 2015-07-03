@@ -1,4 +1,4 @@
-require 'mailchimp/list'
+require 'mailchimp_api_v3/list'
 
 module Mailchimp
   class Lists < Array

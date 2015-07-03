@@ -1,5 +1,5 @@
-require 'mailchimp/version'
-require 'mailchimp/client'
+require 'mailchimp_api_v3/version'
+require 'mailchimp_api_v3/client'
 
 module Mailchimp
   def self.connect(api_key = nil)

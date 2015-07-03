@@ -1,4 +1,4 @@
-require 'mailchimp/interest'
+require 'mailchimp_api_v3/interest'
 
 module Mailchimp
   class List

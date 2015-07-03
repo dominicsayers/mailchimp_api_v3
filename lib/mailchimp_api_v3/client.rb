@@ -1,9 +1,9 @@
-require 'mailchimp/exception'
-require 'mailchimp/collection'
-require 'mailchimp/instance'
-require 'mailchimp/account'
-require 'mailchimp/lists'
-require 'mailchimp/client/remote'
+require 'mailchimp_api_v3/exception'
+require 'mailchimp_api_v3/collection'
+require 'mailchimp_api_v3/instance'
+require 'mailchimp_api_v3/account'
+require 'mailchimp_api_v3/lists'
+require 'mailchimp_api_v3/client/remote'
 
 module Mailchimp
   class Client
@@ -29,7 +29,12 @@ module Mailchimp
 
     def initialize(api_key = nil, extra_headers = {})
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
-      fail Mailchimp::Exception::APIKeyError, 'title' => "Invalid API key format: #{@api_key}" unless api_key_valid?
+
+      fail(
+        Mailchimp::Exception::APIKeyError,
+        'title' => "Invalid API key format: #{@api_key}"
+      ) unless api_key_valid?
+
       @extra_headers = extra_headers
     end
 

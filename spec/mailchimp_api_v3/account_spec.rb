@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'spec_helper'
-require 'mailchimp'
+require 'mailchimp_api_v3'
 
 describe Mailchimp::Account, vcr: { cassette_name: 'mailchimp' } do
   it 'is the expected class' do

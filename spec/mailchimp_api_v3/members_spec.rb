@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'spec_helper'
-require 'mailchimp'
+require 'mailchimp_api_v3'
 
 describe Mailchimp::List::Members, vcr: { cassette_name: 'members' } do
   let(:page_size) { 10 }

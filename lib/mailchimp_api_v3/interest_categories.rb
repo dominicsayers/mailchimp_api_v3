@@ -1,21 +1,21 @@
-require 'mailchimp/member'
+require 'mailchimp_api_v3/interest_category'
 
 module Mailchimp
   class List
-    class Members < Array
+    class InterestCategories < Array
       include Collection
 
       class << self
         def path_key
-          'members'
+          'interest-categories'
         end
 
         def data_key
-          'members'
+          'categories'
         end
 
         def child_class
-          Member
+          InterestCategory
         end
       end
     end

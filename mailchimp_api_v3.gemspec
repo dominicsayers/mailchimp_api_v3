@@ -1,6 +1,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mailchimp/version'
+require 'mailchimp_api_v3/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'mailchimp_api_v3'
@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Xenapto']
   spec.email         = ['developers@xenapto.com']
   spec.description   = 'A simple gem to interact with Mailchimp through their API v3'
-  spec.summary       = 'Example: Mailchimp.new(mc_key).lists'
+  spec.summary       = 'Example: mailchimp.lists("My first list").member("ann@example.com")'
   spec.homepage      = 'https://github.com/Xenapto/mailchimp_api_v3'
   spec.license       = 'BSD'
 
@@ -17,9 +17,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features|coverage)\/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rest-client', '> 1.6'
+  spec.add_runtime_dependency 'rest-client', '~> 1.6', '> 1.6'
 
-  spec.add_development_dependency 'bundler', '> 1.8'
+  spec.add_development_dependency 'bundler', '~> 1.8', '> 1.8'
   spec.add_development_dependency 'rspec', '~> 3.3'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.2'
   spec.add_development_dependency 'gem-release', '~> 0.7'
