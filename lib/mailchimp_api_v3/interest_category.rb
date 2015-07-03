@@ -1,6 +1,6 @@
 require 'mailchimp_api_v3/interests'
 
-module MailchimpAPIV3
+module Mailchimp
   class List
     class InterestCategory
       #- VALID_TYPES = %w(checkboxes dropdown radio hidden)

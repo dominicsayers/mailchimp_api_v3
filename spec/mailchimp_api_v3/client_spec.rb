@@ -2,41 +2,41 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe MailchimpAPIV3::Client, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::Client, vcr: { cassette_name: 'mailchimp' } do
   context 'unauthorized API key' do
     let(:bad_key) { 'xxxxxxxxxx-us11' }
 
     it 'raises an exception if we try to get data' do
-      expect { MailchimpAPIV3::Client.new(bad_key).account }.to raise_error MailchimpAPIV3::Exception::APIKeyError
+      expect { Mailchimp::Client.new(bad_key).account }.to raise_error Mailchimp::Exception::APIKeyError
     end
 
     it 'says it is not connected' do
-      expect(MailchimpAPIV3::Client.new(bad_key).connected?).to be_falsey
+      expect(Mailchimp::Client.new(bad_key).connected?).to be_falsey
     end
   end
 
   context 'valid API key' do
     it 'says it is connected' do
-      expect(MailchimpAPIV3::Client.new.connected?).to be_truthy
+      expect(Mailchimp::Client.new.connected?).to be_truthy
     end
 
     it 'is the expected class' do
-      expect(MailchimpAPIV3::Client.new).to be_a MailchimpAPIV3::Client
+      expect(Mailchimp::Client.new).to be_a Mailchimp::Client
     end
 
     it 'has an account method' do
-      expect(MailchimpAPIV3::Client.new.account).to be_a MailchimpAPIV3::Account
+      expect(Mailchimp::Client.new.account).to be_a Mailchimp::Account
     end
 
     it 'has a lists collection' do
-      lists = MailchimpAPIV3::Client.new.lists
+      lists = Mailchimp::Client.new.lists
       expect(lists).to be_an Array
-      expect(lists.sample).to be_a MailchimpAPIV3::List
+      expect(lists.sample).to be_a Mailchimp::List
     end
   end
 
   context 'problems we can retry the request for' do
-    let(:client) { MailchimpAPIV3::Client.new }
+    let(:client) { Mailchimp::Client.new }
 
     it 'eventually raises the exception' do
       allow(client).to receive(:remote_no_payload).and_raise SocketError.new('test message')

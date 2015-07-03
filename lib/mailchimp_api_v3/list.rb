@@ -1,7 +1,7 @@
 require 'mailchimp_api_v3/members'
 require 'mailchimp_api_v3/interest_categories'
 
-module MailchimpAPIV3
+module Mailchimp
   class List
     include Instance::InstanceMethods
     extend Instance::ClassMethods

@@ -1,4 +1,4 @@
-module MailchimpAPIV3
+module Mailchimp
   module Instance
     module InstanceMethods
       def initialize(client, data, collection_path = '')
@@ -48,7 +48,7 @@ module MailchimpAPIV3
       def fail_unless_exists(key, options = {})
         return if @data.key? key
         message = options == {} ? key : "#{key}: #{options}"
-        fail MailchimpAPIV3::Exception::UnknownAttribute, message
+        fail Mailchimp::Exception::UnknownAttribute, message
       end
     end
 

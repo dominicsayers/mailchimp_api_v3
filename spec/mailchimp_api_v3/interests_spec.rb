@@ -2,13 +2,13 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe MailchimpAPIV3::List::InterestCategory::Interests, vcr: { cassette_name: 'mailchimp' } do
-  let(:list) { MailchimpAPIV3.connect.lists.first }
+describe Mailchimp::List::InterestCategory::Interests, vcr: { cassette_name: 'mailchimp' } do
+  let(:list) { Mailchimp.connect.lists.first }
   let(:interest_category) { list.interest_categories.first }
   let(:interests) { interest_category.interests }
 
   it 'is the expected class' do
-    expect(interests).to be_a MailchimpAPIV3::List::InterestCategory::Interests
+    expect(interests).to be_a Mailchimp::List::InterestCategory::Interests
   end
 
   it 'has a count' do
@@ -20,13 +20,13 @@ describe MailchimpAPIV3::List::InterestCategory::Interests, vcr: { cassette_name
       it 'can add a new instance' do
         data = { 'name' => 'Green' }
         interest = interests.create data
-        expect(interest).to be_a MailchimpAPIV3::List::InterestCategory::Interest
+        expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
         expect(interest.name).to eq 'Green'
       end
 
       it 'fails adding an instance with the same details' do
         data = { 'name' => 'Red' }
-        expect { interests.create data }.to raise_error MailchimpAPIV3::Exception::Duplicate
+        expect { interests.create data }.to raise_error Mailchimp::Exception::Duplicate
       end
     end
 
@@ -34,14 +34,14 @@ describe MailchimpAPIV3::List::InterestCategory::Interests, vcr: { cassette_name
       it 'finds an instance with the same details' do
         data = { 'name' => 'Red' }
         interest = interests.first_or_create data
-        expect(interest).to be_a MailchimpAPIV3::List::InterestCategory::Interest
+        expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
         expect(interest.name).to eq 'red' # Note case
       end
 
       it 'creates a new instance if one does not yet exist' do
         data = { 'name' => 'Amber' }
         interest = interests.first_or_create data
-        expect(interest).to be_a MailchimpAPIV3::List::InterestCategory::Interest
+        expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
         expect(interest.name).to eq 'Amber'
       end
     end

@@ -1,3 +1,3 @@
-module MailchimpAPIV3
+module Mailchimp
   VERSION = '0.0.4'
 end

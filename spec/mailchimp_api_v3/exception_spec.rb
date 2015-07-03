@@ -2,12 +2,12 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe MailchimpAPIV3::Exception::APIKeyError, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::Exception::APIKeyError, vcr: { cassette_name: 'mailchimp' } do
   let(:bad_key) { 'xxxxxxxxxx-us11' }
 
   it 'raises an exception if the API key is not valid' do
-    expect { MailchimpAPIV3.connect(bad_key).account }.to raise_error { |e|
-      expect(e).to be_a MailchimpAPIV3::Exception::APIKeyError
+    expect { Mailchimp.connect(bad_key).account }.to raise_error { |e|
+      expect(e).to be_a Mailchimp::Exception::APIKeyError
       expect(e.type).to eq 'http://kb.mailchimp.com/api/error-docs/401-api-key-invalid'
       expect(e.title).to eq 'API Key Invalid'
       expect(e.status).to eq 401
@@ -16,38 +16,38 @@ describe MailchimpAPIV3::Exception::APIKeyError, vcr: { cassette_name: 'mailchim
   end
 
   it 'does not raise an exception if the API key is valid' do
-    expect { MailchimpAPIV3.connect.account }.not_to raise_error
+    expect { Mailchimp.connect.account }.not_to raise_error
   end
 end
 
-describe MailchimpAPIV3::Exception::UnknownAttribute, vcr: { cassette_name: 'mailchimp' } do
-  let(:account) { MailchimpAPIV3.connect.account }
+describe Mailchimp::Exception::UnknownAttribute, vcr: { cassette_name: 'mailchimp' } do
+  let(:account) { Mailchimp.connect.account }
 
   it 'returns a known attribute' do
     expect { account.name }.not_to raise_error
   end
 
   it 'fails if we ask for an unknown attribute' do
-    expect { account.blarbleferry }.to raise_error MailchimpAPIV3::Exception::UnknownAttribute
+    expect { account.blarbleferry }.to raise_error Mailchimp::Exception::UnknownAttribute
   end
 end
 
-describe MailchimpAPIV3::Exception::BadRequest do
+describe Mailchimp::Exception::BadRequest do
   it 'raises a Duplicate exception if the message says so' do
     data = { 'detail' => 'The thing already exists, idiot' }
-    expect { MailchimpAPIV3::Exception.parse_invalid_resource_exception data }
-      .to raise_error MailchimpAPIV3::Exception::Duplicate
+    expect { Mailchimp::Exception.parse_invalid_resource_exception data }
+      .to raise_error Mailchimp::Exception::Duplicate
   end
 
   it 'raises a MissingField exception if the message says so' do
     data = { 'detail' => 'The thing can\'t be blank, idiot' }
-    expect { MailchimpAPIV3::Exception.parse_invalid_resource_exception data }
-      .to raise_error MailchimpAPIV3::Exception::MissingField
+    expect { Mailchimp::Exception.parse_invalid_resource_exception data }
+      .to raise_error Mailchimp::Exception::MissingField
   end
 
   it 'raises a BadRequest exception otherwise' do
     data = { 'detail' => 'The thing is an idiot' }
-    expect { MailchimpAPIV3::Exception.parse_invalid_resource_exception data }
-      .to raise_error MailchimpAPIV3::Exception::BadRequest
+    expect { Mailchimp::Exception.parse_invalid_resource_exception data }
+      .to raise_error Mailchimp::Exception::BadRequest
   end
 end

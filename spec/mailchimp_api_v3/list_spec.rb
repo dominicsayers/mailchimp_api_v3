@@ -2,12 +2,12 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe MailchimpAPIV3::List, vcr: { cassette_name: 'mailchimp' } do
-  let(:lists) { MailchimpAPIV3.connect.lists }
+describe Mailchimp::List, vcr: { cassette_name: 'mailchimp' } do
+  let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
 
   it 'is the expected class' do
-    expect(list).to be_a MailchimpAPIV3::List
+    expect(list).to be_a Mailchimp::List
   end
 
   it 'has a name' do
@@ -25,13 +25,13 @@ describe MailchimpAPIV3::List, vcr: { cassette_name: 'mailchimp' } do
   it 'has a members collection' do
     members = list.members
     expect(members).to be_an Array
-    expect(members.sample).to be_a MailchimpAPIV3::List::Member
+    expect(members.sample).to be_a Mailchimp::List::Member
   end
 
   it 'has a interest_categories collection' do
     interest_categories = list.interest_categories
     expect(interest_categories).to be_an Array
-    expect(interest_categories.sample).to be_a MailchimpAPIV3::List::InterestCategory
+    expect(interest_categories.sample).to be_a Mailchimp::List::InterestCategory
   end
 
   context 'get a specific member' do
@@ -40,14 +40,14 @@ describe MailchimpAPIV3::List, vcr: { cassette_name: 'mailchimp' } do
 
     it 'gets a member by id' do
       member = list.members id
-      expect(member).to be_a MailchimpAPIV3::List::Member
+      expect(member).to be_a Mailchimp::List::Member
       expect(member.id).to eq id
       expect(member.email_address).to eq email_address
     end
 
     it 'gets a member by email address' do
       member = list.members email_address
-      expect(member).to be_a MailchimpAPIV3::List::Member
+      expect(member).to be_a Mailchimp::List::Member
       expect(member.id).to eq id
       expect(member.email_address).to eq email_address
     end

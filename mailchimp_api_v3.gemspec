@@ -4,7 +4,7 @@ require 'mailchimp_api_v3/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'mailchimp_api_v3'
-  spec.version       = MailchimpAPIV3::VERSION
+  spec.version       = Mailchimp::VERSION
   spec.authors       = ['Xenapto']
   spec.email         = ['developers@xenapto.com']
   spec.description   = 'A simple gem to interact with Mailchimp through their API v3'

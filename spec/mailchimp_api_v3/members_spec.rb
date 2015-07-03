@@ -2,14 +2,14 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe MailchimpAPIV3::List::Members, vcr: { cassette_name: 'members' } do
+describe Mailchimp::List::Members, vcr: { cassette_name: 'members' } do
   let(:page_size) { 10 }
   let(:member_count) { 37 }
-  let(:list) { MailchimpAPIV3.connect.lists.first }
+  let(:list) { Mailchimp.connect.lists.first }
   let(:members) { list.members 'page_size' => page_size }
 
   it 'is the expected class' do
-    expect(members).to be_a MailchimpAPIV3::List::Members
+    expect(members).to be_a Mailchimp::List::Members
   end
 
   it 'has a count' do
@@ -29,6 +29,6 @@ describe MailchimpAPIV3::List::Members, vcr: { cassette_name: 'members' } do
   end
 
   it 'has a Member for each item' do
-    expect(members.sample).to be_a MailchimpAPIV3::List::Member
+    expect(members.sample).to be_a Mailchimp::List::Member
   end
 end

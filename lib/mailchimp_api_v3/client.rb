@@ -5,7 +5,7 @@ require 'mailchimp_api_v3/account'
 require 'mailchimp_api_v3/lists'
 require 'mailchimp_api_v3/client/remote'
 
-module MailchimpAPIV3
+module Mailchimp
   class Client
     include Remote
 
@@ -19,7 +19,7 @@ module MailchimpAPIV3
 
     def connected?
       account
-    rescue MailchimpAPIV3::Exception::APIKeyError
+    rescue Mailchimp::Exception::APIKeyError
       false
     else
       true
@@ -31,7 +31,7 @@ module MailchimpAPIV3
       @api_key = api_key || ENV['MAILCHIMP_API_KEY']
 
       fail(
-        MailchimpAPIV3::Exception::APIKeyError,
+        Mailchimp::Exception::APIKeyError,
         'title' => "Invalid API key format: #{@api_key}"
       ) unless api_key_valid?
 

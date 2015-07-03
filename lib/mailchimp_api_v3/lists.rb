@@ -1,6 +1,6 @@
 require 'mailchimp_api_v3/list'
 
-module MailchimpAPIV3
+module Mailchimp
   class Lists < Array
     include Collection
 

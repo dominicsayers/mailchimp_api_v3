@@ -37,21 +37,21 @@ To connect to the Mailchimp API you need to supply an API key. You can do this e
 Examples:
 
 ```ruby
-MailchimpAPIV3.connect(my_api_key) # Uses the API key in my_api_key
-MailchimpAPIV3.connect # Uses ENV['MAILCHIMP_API_KEY']
+Mailchimp.connect(my_api_key) # Uses the API key in my_api_key
+Mailchimp.connect # Uses ENV['MAILCHIMP_API_KEY']
 ```
 
 ```ruby
-MailchimpAPIV3.connect.lists
+Mailchimp.connect.lists
 ```
 
 ```ruby
-mailchimp = MailchimpAPIV3.connect
+mailchimp = Mailchimp.connect
 list = mailchimp.lists.find_by name: 'My first list'
 ```
 
 ```ruby
-mailchimp = MailchimpAPIV3.connect
+mailchimp = Mailchimp.connect
 member = mailchimp.lists('e73f5910ca').members('ann@example.com')
 member.name # => "Ann Example"
 ```
