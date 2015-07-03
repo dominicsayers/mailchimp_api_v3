@@ -1,7 +1,7 @@
 require 'yaml'
 require 'restclient'
 
-module Mailchimp
+module MailchimpAPIV3
   class Client
     module Remote
       def get(path = '', options = {})
@@ -34,9 +34,9 @@ module Mailchimp
       def managed_remote_exception(e)
         case e.class.to_s # TODO: Find out why this won't match the class except by name string
         when 'RestClient::Unauthorized'
-          fail Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
+          fail MailchimpAPIV3::Exception::APIKeyError, YAML.load(e.http_body)
         when 'RestClient::BadRequest'
-          Mailchimp::Exception.parse_invalid_resource_exception YAML.load(e.http_body)
+          MailchimpAPIV3::Exception.parse_invalid_resource_exception YAML.load(e.http_body)
         else
           fail e
         end

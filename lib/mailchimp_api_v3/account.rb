@@ -1,4 +1,4 @@
-module Mailchimp
+module MailchimpAPIV3
   class Account
     include Instance::InstanceMethods
 

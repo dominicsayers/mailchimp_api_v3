@@ -1,6 +1,6 @@
-require 'mailchimp/collection/paging'
+require 'mailchimp_api_v3/collection/paging'
 
-module Mailchimp
+module MailchimpAPIV3
   module Collection
     include Paging
 

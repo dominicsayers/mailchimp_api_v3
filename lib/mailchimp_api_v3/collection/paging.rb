@@ -1,4 +1,4 @@
-module Mailchimp
+module MailchimpAPIV3
   module Collection
     module Paging
       DEFAULT_PAGE_SIZE = 500

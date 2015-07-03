@@ -1,6 +1,6 @@
-require 'mailchimp/interest'
+require 'mailchimp_api_v3/interest'
 
-module Mailchimp
+module MailchimpAPIV3
   class List
     class InterestCategory
       class Interests < Array

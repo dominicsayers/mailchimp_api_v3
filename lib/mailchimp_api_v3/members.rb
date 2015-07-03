@@ -1,6 +1,6 @@
-require 'mailchimp/member'
+require 'mailchimp_api_v3/member'
 
-module Mailchimp
+module MailchimpAPIV3
   class List
     class Members < Array
       include Collection

@@ -1,4 +1,4 @@
-module Mailchimp
+module MailchimpAPIV3
   class List
     class InterestCategory
       class Interest

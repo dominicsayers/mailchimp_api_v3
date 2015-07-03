@@ -1,4 +1,4 @@
-module Mailchimp
+module MailchimpAPIV3
   module Exception
     def self.parse_invalid_resource_exception(data)
       detail = data['detail']

@@ -1,15 +1,15 @@
 # encoding: utf-8
 require 'spec_helper'
-require 'mailchimp'
+require 'mailchimp_api_v3'
 
-describe Mailchimp::List::InterestCategory::Interest, vcr: { cassette_name: 'mailchimp' } do
-  let(:lists) { Mailchimp.connect.lists }
+describe MailchimpAPIV3::List::InterestCategory::Interest, vcr: { cassette_name: 'mailchimp' } do
+  let(:lists) { MailchimpAPIV3.connect.lists }
   let(:list) { lists.first }
   let(:interest_category) { list.interest_categories.first }
   let(:interest) { interest_category.interests.first }
 
   it 'is the expected class' do
-    expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
+    expect(interest).to be_a MailchimpAPIV3::List::InterestCategory::Interest
   end
 
   it 'has a name' do
