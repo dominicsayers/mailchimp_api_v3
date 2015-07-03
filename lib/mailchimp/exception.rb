@@ -1,14 +1,18 @@
 module Mailchimp
   module Exception
     def self.parse_invalid_resource_exception(data)
-      if data['detail'].include? 'already exists'
+      detail = data['detail']
+
+      if detail.include? 'already exists'
         fail Duplicate, data
+      elsif detail.include? 'can\'t be blank'
+        fail MissingField, data
       else
         fail BadRequest, data
       end
     end
 
-    module DataException
+    class DataException < RuntimeError
       def initialize(data)
         @data = data
         super name || title
@@ -19,16 +23,16 @@ module Mailchimp
       end
     end
 
-    class APIKeyError < RuntimeError
-      include DataException
+    class APIKeyError < DataException
     end
 
-    class Duplicate < RuntimeError
-      include DataException
+    class Duplicate < DataException
     end
 
-    class BadRequest < RuntimeError
-      include DataException
+    class MissingField < DataException
+    end
+
+    class BadRequest < DataException
     end
 
     class UnknownAttribute < RuntimeError

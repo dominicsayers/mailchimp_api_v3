@@ -6,3 +6,11 @@ module Mailchimp
     Client.new api_key
   end
 end
+
+class Hash
+  def deep_stringify_keys
+    result = {}
+    each { |k, v| result[k.to_s] = v.is_a?(Hash) ? v.deep_stringify_keys : v }
+    result
+  end
+end

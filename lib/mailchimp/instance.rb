@@ -8,32 +8,20 @@ module Mailchimp
         #- puts @data # debug
       end
 
+      def update(new_data)
+        @data = @client.patch(new_data, path)
+        self
+      end
+
       def path
         @path ||= "#{@collection_path}/#{@data['id']}"
       end
 
-      def method_missing(symbol, options = {})
-        key = symbol.id2name
-        fail_unless_exists key, options
-        @data[key]
-      end
-
-      def matches?(data)
-        data.each do |k, v|
+      def matches?(match_data)
+        match_data.each do |k, v|
           break false unless __send__(k).casecmp(v).zero? # case-insensitive comparison
           true
         end
-      end
-
-      def fail_unless_exists(key, options = {})
-        return if @data.key? key
-        message = options == {} ? key : "#{key}: #{options}"
-        fail Mailchimp::Exception::UnknownAttribute, message
-      end
-
-      def fail_unless_id_in(data = {})
-        return if data.key? 'id'
-        fail Mailchimp::Exception::MissingId, data
       end
 
       def subclass_from(collection_class, options = {})
@@ -45,6 +33,22 @@ module Mailchimp
           # Get the collection
           collection_class.new @client, path, options
         end
+      end
+
+      private
+
+      attr_reader :data
+
+      def method_missing(symbol, options = {})
+        key = symbol.id2name
+        fail_unless_exists key, options
+        @data[key]
+      end
+
+      def fail_unless_exists(key, options = {})
+        return if @data.key? key
+        message = options == {} ? key : "#{key}: #{options}"
+        fail Mailchimp::Exception::UnknownAttribute, message
       end
     end
 
