@@ -7,7 +7,7 @@ unless ENV['NO_SIMPLECOV']
     SimpleCov.coverage_dir(dir)
   end
 
-  SimpleCov.start
+  SimpleCov.start { add_filter '/spec/' }
   Coveralls.wear! if ENV['COVERALLS_REPO_TOKEN']
 end
 

@@ -35,22 +35,35 @@ describe Mailchimp::Client, vcr: { cassette_name: 'mailchimp' } do
     end
   end
 
-  context 'problems we can retry the request for' do
+  context 'exceptions' do
     let(:client) { Mailchimp::Client.new }
 
-    it 'eventually raises the exception' do
-      allow(client).to receive(:remote_no_payload).and_raise SocketError.new('test message')
+    context 'problems we can retry the request for' do
+      it 'eventually raises the exception' do
+        allow(client).to receive(:remote_no_payload).and_raise SocketError.new('test message')
 
-      expect { client.account }.to raise_error { |e|
-        expect(e).to be_an(SocketError)
-        expect(e.message).to eq('test message')
-      }
+        expect { client.account }.to raise_error { |e|
+          expect(e).to be_a(SocketError)
+          expect(e.message).to eq('test message')
+        }
+      end
+
+      it 'only raises the exception after several retries' do
+        allow(client).to receive(:remote_no_payload).twice.and_raise SocketError.new('test message')
+        allow(client).to receive(:remote_no_payload).and_return '"id":1'
+        expect { client.account }.not_to raise_error
+      end
     end
 
-    it 'only raises the exception after several retries' do
-      allow(client).to receive(:remote_no_payload).twice.and_raise SocketError.new('test message')
-      allow(client).to receive(:remote_no_payload).and_return '"id":1'
-      expect { client.account }.not_to raise_error
+    context 'unexpected error' do
+      it 'raises an exception if it encounters an unexpected error' do
+        exception = NotImplementedError.new('test message')
+
+        expect { client.__send__(:managed_remote_exception, exception) }.to raise_error { |e|
+          expect(e).to be_a(NotImplementedError)
+          expect(e.message).to eq('test message')
+        }
+      end
     end
   end
 end
