@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe Mailchimp::List::Members, vcr: { cassette_name: 'members' } do
+describe Mailchimp::List::Members, vcr: { cassette_name: 'members', allow_playback_repeats: true } do
   let(:page_size) { 10 }
   let(:member_count) { 37 }
   let(:list) { Mailchimp.connect.lists.first }

@@ -4,7 +4,8 @@ require 'mailchimp_api_v3'
 
 describe Mailchimp::List::InterestCategory::Interests, vcr: { cassette_name: 'mailchimp' } do
   let(:list) { Mailchimp.connect.lists.first }
-  let(:interest_category) { list.interest_categories.first }
+  let(:title) { 'Days' }
+  let(:interest_category) { list.interest_categories.create 'title' => title, 'type' => 'checkboxes' }
   let(:interests) { interest_category.interests }
 
   it 'is the expected class' do
@@ -18,31 +19,22 @@ describe Mailchimp::List::InterestCategory::Interests, vcr: { cassette_name: 'ma
   context 'adding a new instance' do
     context '#create' do
       it 'can add a new instance' do
-        data = { 'name' => 'Green' }
-        interest = interests.create data
+        day = 'Monday'
+        interest = interests.create name: day
         expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
-        expect(interest.name).to eq 'Green'
-      end
+        expect(interest.name).to eq day
+        expect { interests.create name: day }.to raise_error Mailchimp::Exception::Duplicate
 
-      it 'fails adding an instance with the same details' do
-        data = { 'name' => 'Red' }
-        expect { interests.create data }.to raise_error Mailchimp::Exception::Duplicate
-      end
-    end
-
-    context '#first_or_create' do
-      it 'finds an instance with the same details' do
-        data = { 'name' => 'Red' }
-        interest = interests.first_or_create data
+        interest = interests.first_or_create name: day
         expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
-        expect(interest.name).to eq 'red' # Note case
+        expect(interest.name).to eq day
       end
 
       it 'creates a new instance if one does not yet exist' do
-        data = { 'name' => 'Amber' }
+        data = { 'name' => 'Tuesday' }
         interest = interests.first_or_create data
         expect(interest).to be_a Mailchimp::List::InterestCategory::Interest
-        expect(interest.name).to eq 'Amber'
+        expect(interest.name).to eq 'Tuesday'
       end
     end
   end

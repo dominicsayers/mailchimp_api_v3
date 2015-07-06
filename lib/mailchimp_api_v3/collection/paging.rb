@@ -9,7 +9,7 @@ module Mailchimp
       end
 
       def fetch_options
-        links_delim = self.class::DATA_KEY.empty? ? '' : '.'
+        links_delim = self.class::DATA_KEY.empty? ? '' : '._links,'
 
         {
           'exclude_fields' => "#{self.class::DATA_KEY}#{links_delim}_links",

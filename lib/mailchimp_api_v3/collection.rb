@@ -38,7 +38,7 @@ module Mailchimp
     end
 
     def create(data)
-      response = @client.post data, path
+      response = @client.post path, data
       self.class::CHILD_CLASS.new @client, response, path
     end
 

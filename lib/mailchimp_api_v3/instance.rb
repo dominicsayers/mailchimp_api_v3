@@ -17,8 +17,12 @@ module Mailchimp
     end
 
     def update(new_data)
-      @data = @client.patch(new_data, path)
+      @data = @client.patch(path, new_data)
       self
+    end
+
+    def delete
+      @client.delete(path)
     end
 
     def path
