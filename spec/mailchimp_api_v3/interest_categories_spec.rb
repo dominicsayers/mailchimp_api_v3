@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe Mailchimp::List::InterestCategories, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::List::InterestCategories, vcr: { cassette_name: 'interest_categories' } do
   let(:list) { Mailchimp.connect.lists.first }
   let(:interest_categories) { list.interest_categories }
 
@@ -11,7 +11,7 @@ describe Mailchimp::List::InterestCategories, vcr: { cassette_name: 'mailchimp' 
   end
 
   context 'adding and deleting' do
-    context '#create, #find_by, #delete' do
+    context '#create, #find_by, #delete, #first_or_create' do
       it 'can add and delete a new instance' do
         title = 'Days'
         data = { 'title' => title, 'type' => 'checkboxes' }
@@ -31,15 +31,12 @@ describe Mailchimp::List::InterestCategories, vcr: { cassette_name: 'mailchimp' 
 
         # #delete
         expect { interest_category.delete }.to change { list.interest_categories.count }.by(-1)
-      end
-    end
 
-    context '#first_or_create createsa new instance' do
-      it 'creates a new instance if one does not yet exist' do
-        data = { 'title' => 'Sex', 'type' => 'radio' }
+        # #first_or_create creates a new instance
+        title = 'Sex'
+        data = { 'title' => title, 'type' => 'radio' }
         interest_category = interest_categories.first_or_create data
-        expect(interest_category).to be_a Mailchimp::List::InterestCategory
-        expect(interest_category.title).to eq 'Sex'
+        expect(interest_category.title).to eq title
       end
     end
   end

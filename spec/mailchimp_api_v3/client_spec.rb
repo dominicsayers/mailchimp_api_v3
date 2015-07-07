@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe Mailchimp::Client, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::Client, vcr: { cassette_name: 'client' } do
   context 'unauthorized API key' do
     let(:bad_key) { 'xxxxxxxxxx-us11' }
 

@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe Mailchimp::Lists, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   let(:lists) { Mailchimp.connect.lists }
 
   it 'is the expected class' do

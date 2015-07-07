@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe Mailchimp::List::InterestCategory, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::List::InterestCategory, vcr: { cassette_name: 'interest_category' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
   let(:title) { 'Days' }
