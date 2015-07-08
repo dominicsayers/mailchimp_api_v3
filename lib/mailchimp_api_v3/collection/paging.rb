@@ -57,8 +57,11 @@ module Mailchimp
       end
 
       def parse_options(options = {})
-        @offset = options['start'] if options.key? 'start'
-        @page_size = options['page_size'] if options.key? 'page_size'
+        if options
+          @offset = options['start'] if options.key? 'start'
+          @page_size = options['page_size'] if options.key? 'page_size'
+        end
+
         invalidate_current_page
       end
 

@@ -46,5 +46,9 @@ module Mailchimp
       return instance if instance
       create(data)
     end
+
+    def name_field
+      self.class.const_defined?(:NAME_FIELD) ? self.class::NAME_FIELD : 'name'
+    end
   end
 end

@@ -28,6 +28,12 @@ describe Mailchimp::List, vcr: { cassette_name: 'list' } do
     expect(members.sample).to be_a Mailchimp::List::Member
   end
 
+  it 'gets a subset of members' do
+    members = list.members last_name: 'Example'
+    expect(members).to be_an Array
+    expect(members.sample).to be_a Mailchimp::List::Member
+  end
+
   it 'has a interest_categories collection' do
     interest_categories = list.interest_categories
     expect(interest_categories).to be_an Array
@@ -50,6 +56,12 @@ describe Mailchimp::List, vcr: { cassette_name: 'list' } do
       expect(member).to be_a Mailchimp::List::Member
       expect(member.id).to eq id
       expect(member.email_address).to eq email_address
+    end
+
+    it 'gets a member by name' do
+      member = list.members 'Ann Example'
+      expect(member).to be_a Mailchimp::List::Member
+      expect(member.id).to eq id
     end
   end
 end

@@ -71,7 +71,7 @@ module Mailchimp
       end
 
       def url_stub
-        @url_stub ||= "https://#{dc}.api.mailchimp.com/3.0"
+        @url_stub ||= "https://#{dc}.api.mailchimp.com"
       end
 
       def params_from(options = {})

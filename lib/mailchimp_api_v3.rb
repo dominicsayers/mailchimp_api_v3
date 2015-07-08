@@ -23,4 +23,11 @@ class Hash
     each { |k, v| result[k.to_s] = v.is_a?(Hash) ? v.deep_stringify_keys : v }
     result
   end
+
+  def divide_on(*keys)
+    keys.each_with_object(self.class.new) do |k, hash|
+      hash[k] = self[k] if key?(k)
+      delete k
+    end
+  end
 end
