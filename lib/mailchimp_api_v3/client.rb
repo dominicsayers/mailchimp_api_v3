@@ -13,8 +13,10 @@ module Mailchimp
       Account.new self, get
     end
 
-    def lists
-      Lists.new self
+    def lists(filter = {})
+      data = filter.is_a?(String) ? { name: filter.dup } : filter.dup
+      lists = Lists.new(self)
+      data.empty? ? lists : lists.find_by(data)
     end
 
     def connected?

@@ -33,6 +33,12 @@ describe Mailchimp::Client, vcr: { cassette_name: 'client' } do
       expect(lists).to be_an Array
       expect(lists.sample).to be_a Mailchimp::List
     end
+
+    it 'retrieves a list by name' do
+      list = Mailchimp::Client.new.lists 'My first list'
+      expect(list).to be_a Mailchimp::List
+      expect(list.name).to eq 'My first list'
+    end
   end
 
   context 'exceptions' do
