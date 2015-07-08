@@ -1,8 +1,11 @@
 module Mailchimp
   class List
     class InterestCategory < Instance
-      require 'mailchimp_api_v3/interest_category/subclasses'
-      include Subclasses
+      #- VALID_TYPES = %w(checkboxes dropdown radio hidden)
+
+      def interests(options = {})
+        subclass_from Interests, options
+      end
     end
 
     class InterestCategories < Collection

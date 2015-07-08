@@ -1,12 +1,5 @@
-require 'mailchimp_api_v3/collection'
-require 'mailchimp_api_v3/instance'
-require 'mailchimp_api_v3/exception'
-require 'mailchimp_api_v3/account'
-require 'mailchimp_api_v3/list'
-require 'mailchimp_api_v3/client/remote'
-
 module Mailchimp
-  class Client
+  class Client < Instance
     include Remote
 
     def account
@@ -14,7 +7,8 @@ module Mailchimp
     end
 
     def lists(filter = {})
-      data = filter.is_a?(String) ? { name: filter.dup } : filter.dup
+      raw_data = filter.respond_to?(:dup) ? filter.dup : filter
+      data = raw_data.is_a?(String) ? { name: raw_data } : raw_data
       lists = Lists.new(self)
       data.empty? ? lists : lists.find_by(data)
     end

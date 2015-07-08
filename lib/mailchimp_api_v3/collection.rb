@@ -1,6 +1,5 @@
 module Mailchimp
   class Collection < Array
-    require 'mailchimp_api_v3/collection/paging' # Don't require before class inherits from Array
     include Paging
 
     def initialize(client, parent_path = '', options = {})

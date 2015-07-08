@@ -1,5 +1,5 @@
 module Mailchimp
-  class Collection
+  class Collection < Array
     module Paging
       DEFAULT_PAGE_SIZE = 500
 

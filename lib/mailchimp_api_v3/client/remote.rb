@@ -2,7 +2,7 @@ require 'yaml'
 require 'restclient'
 
 module Mailchimp
-  class Client
+  class Client < Instance
     module Remote
       def get(path = '', options = {})
         managed_remote path, :get, options
