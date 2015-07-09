@@ -1,0 +1,637 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1173'
+      X-Request-Id:
+      - 59b8dc2c-87c8-4250-a605-9623d2f9a988
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:42 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
+        Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
+        7DQ","country":"262","phone":"07917153555"},"permission_reminder":"Opt-in
+        only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":2,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":2,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-06-27T14:50:39+00:00","last_unsub_date":""}}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:42 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '56'
+      X-Request-Id:
+      - f649a54a-b807-4c59-9db6-12b560fb4283
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:43 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[],"total_items":0}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:43 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '56'
+      X-Request-Id:
+      - bbcf652c-5e10-43c1-bf93-47f2d6ab83e5
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:43 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[],"total_items":0}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:43 GMT
+- request:
+    method: post
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
+    body:
+      encoding: UTF-8
+      string: '{"title":"Days","type":"checkboxes"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Content-Length:
+      - '36'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1210'
+      X-Request-Id:
+      - 8a32a0ac-990b-4737-be25-057afde3161f
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:43 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes","_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/af5e3cc15e","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json"},{"rel":"update","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/af5e3cc15e","method":"PATCH","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"delete","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/af5e3cc15e","method":"DELETE"},{"rel":"interests","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/af5e3cc15e/interests","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json"}]}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:43 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '151'
+      X-Request-Id:
+      - 65ac7410-d687-4ccd-a22c-9484c78bb8cf
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:44 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes"}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:44 GMT
+- request:
+    method: post
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
+    body:
+      encoding: UTF-8
+      string: '{"title":"Days","type":"checkboxes"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Content-Length:
+      - '36'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/problem+json; charset=utf-8
+      Content-Length:
+      - '230'
+      X-Request-Id:
+      - 2c95368f-6329-4447-acd9-5ff95d82b502
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:44 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"http://kb.mailchimp.com/api/error-docs/400-invalid-resource","title":"Invalid
+        Resource","status":400,"detail":"An interest category with the title ''Days''
+        already exists.","instance":"2c95368f-6329-4447-acd9-5ff95d82b502"}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:44 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '151'
+      X-Request-Id:
+      - 7631d279-4200-4259-aff1-3fa85fe3260c
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:44 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes"}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:44 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '151'
+      X-Request-Id:
+      - e329d4d6-7406-4f37-b5b8-e048837591fd
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:44 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes"}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:44 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '151'
+      X-Request-Id:
+      - 17d05502-f37b-4a53-9816-fd4bc4bba48f
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:45 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes"}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:45 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '151'
+      X-Request-Id:
+      - 36067265-864f-465a-b905-4acfee872d1b
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:45 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes"}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:45 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '151'
+      X-Request-Id:
+      - 33f52732-aa22-4384-9cdc-fcb049e9f7d1
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:42:45 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"af5e3cc15e","title":"Days","display_order":0,"type":"checkboxes"}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:45 GMT
+- request:
+    method: delete
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/af5e3cc15e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      X-Request-Id:
+      - 292f2de6-da6e-43e0-9872-1b156faffce2
+      Date:
+      - Tue, 07 Jul 2015 11:42:45 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:42:45 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '56'
+      X-Request-Id:
+      - 9c345d51-8761-4190-a090-3378620df977
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:43:01 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[],"total_items":0}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:43:01 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '56'
+      X-Request-Id:
+      - bddd2737-6025-49da-a9a5-836ab03aad88
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:43:01 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","categories":[],"total_items":0}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:43:01 GMT
+- request:
+    method: post
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
+    body:
+      encoding: UTF-8
+      string: '{"title":"Sex","type":"radio"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Content-Length:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1204'
+      X-Request-Id:
+      - f47bf782-8209-48b5-ad59-fa150d0e61e9
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:43:01 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"list_id":"e73f5910ca","id":"f349987e8f","title":"Sex","display_order":0,"type":"radio","_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/f349987e8f","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json"},{"rel":"update","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/f349987e8f","method":"PATCH","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"delete","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/f349987e8f","method":"DELETE"},{"rel":"interests","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/f349987e8f/interests","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json"}]}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:43:01 GMT
+recorded_with: VCR 2.9.3

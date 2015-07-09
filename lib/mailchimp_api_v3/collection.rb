@@ -1,6 +1,5 @@
 module Mailchimp
   class Collection < Array
-    require 'mailchimp_api_v3/collection/paging' # Don't require before class inherits from Array
     include Paging
 
     def initialize(client, parent_path = '', options = {})
@@ -38,7 +37,7 @@ module Mailchimp
     end
 
     def create(data)
-      response = @client.post data, path
+      response = @client.post path, data
       self.class::CHILD_CLASS.new @client, response, path
     end
 
@@ -46,6 +45,10 @@ module Mailchimp
       instance = find_by(data)
       return instance if instance
       create(data)
+    end
+
+    def name_field
+      self.class.const_defined?(:NAME_FIELD) ? self.class::NAME_FIELD : 'name'
     end
   end
 end

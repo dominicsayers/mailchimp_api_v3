@@ -1,0 +1,267 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey xxxxxxxxxx-us11
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/html; charset=iso-8859-1
+      Content-Length:
+      - '242'
+      Location:
+      - http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+      Date:
+      - Tue, 07 Jul 2015 11:29:35 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>301 Moved Permanently</title>
+        </head><body>
+        <h1>Moved Permanently</h1>
+        <p>The document has moved <a href="http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/">here</a>.</p>
+        </body></html>
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:35 GMT
+- request:
+    method: get
+    uri: http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey xxxxxxxxxx-us11
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Cookie:
+      - ''
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/problem+json; charset=utf-8
+      Content-Length:
+      - '250'
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:29:35 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"http://kb.mailchimp.com/api/error-docs/401-api-key-invalid","title":"API
+        Key Invalid","status":401,"detail":"Your API key may be invalid, or you''ve
+        attempted to access the wrong datacenter.","instance":"b979a616-d948-4e32-abe1-930719fe1671"}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:35 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/html; charset=iso-8859-1
+      Content-Length:
+      - '242'
+      Location:
+      - http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+      Date:
+      - Tue, 07 Jul 2015 11:29:35 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>301 Moved Permanently</title>
+        </head><body>
+        <h1>Moved Permanently</h1>
+        <p>The document has moved <a href="http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/">here</a>.</p>
+        </body></html>
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:35 GMT
+- request:
+    method: get
+    uri: http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Cookie:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2003'
+      X-Request-Id:
+      - 088a39c2-676a-4e5a-8764-cdcfbef3a812
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:29:35 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"account_id":"1dbca289fd41b54838bcbb501","account_name":"InSite Arts","contact":{"company":"InSite
+        Arts","addr1":"300 Burdett Road","addr2":"London","city":"London","state":"","zip":"E14
+        7DQ","country":"GB"},"last_login":"2015-07-07 11:24:31","total_subscribers":2,"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json"},{"rel":"lists","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json"},{"rel":"reports","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/reports","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Reports/Collection.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/CollectionLinks/Reports.json"},{"rel":"conversations","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/conversations","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Conversations/Collection.json"},{"rel":"campaigns","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/campaigns","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Campaigns/Collection.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/CollectionLinks/Campaigns.json"},{"rel":"automations","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/automations","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Automations/Collection.json"},{"rel":"templates","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/templates","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Templates/Collection.json"},{"rel":"file-manager","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/file-manager","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/FileManager/Namespace.json"},{"rel":"authorized-apps","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/authorized-apps","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/AuthorizedApps/Collection.json"}]}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:35 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1174'
+      X-Request-Id:
+      - 93502109-b814-4728-b585-d98751ff35d5
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:29:36 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
+        Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
+        7DQ","country":"262","phone":"07917153555"},"permission_reminder":"Opt-in
+        only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":2,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":2,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-06-27T14:50:39+00:00","last_unsub_date":""}}],"total_items":1}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:36 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1174'
+      X-Request-Id:
+      - 150a25a3-40ed-4dd6-9454-5b7c04bc0e91
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 08 Jul 2015 10:22:17 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
+        Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
+        7DQ","country":"262","phone":"07917153555"},"permission_reminder":"Opt-in
+        only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":2,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":2,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-06-27T14:50:39+00:00","last_unsub_date":""}}],"total_items":1}'
+    http_version:
+  recorded_at: Wed, 08 Jul 2015 10:22:17 GMT
+recorded_with: VCR 2.9.3

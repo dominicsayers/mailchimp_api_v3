@@ -1,5 +1,5 @@
 module Mailchimp
-  class Collection
+  class Collection < Array
     module Paging
       DEFAULT_PAGE_SIZE = 500
 
@@ -9,7 +9,7 @@ module Mailchimp
       end
 
       def fetch_options
-        links_delim = self.class::DATA_KEY.empty? ? '' : '.'
+        links_delim = self.class::DATA_KEY.empty? ? '' : '._links,'
 
         {
           'exclude_fields' => "#{self.class::DATA_KEY}#{links_delim}_links",
@@ -57,8 +57,11 @@ module Mailchimp
       end
 
       def parse_options(options = {})
-        @offset = options['start'] if options.key? 'start'
-        @page_size = options['page_size'] if options.key? 'page_size'
+        if options
+          @offset = options['start'] if options.key? 'start'
+          @page_size = options['page_size'] if options.key? 'page_size'
+        end
+
         invalidate_current_page
       end
 

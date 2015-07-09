@@ -1,20 +1,17 @@
-require 'mailchimp_api_v3/collection'
-require 'mailchimp_api_v3/instance'
-require 'mailchimp_api_v3/exception'
-require 'mailchimp_api_v3/account'
-require 'mailchimp_api_v3/list'
-require 'mailchimp_api_v3/client/remote'
-
 module Mailchimp
-  class Client
+  class Client < Instance
     include Remote
 
     def account
-      Account.new self, get
+      Account.new self, get(path)
     end
 
-    def lists
-      Lists.new self
+    def lists(*args)
+      subclass_from Lists, *args
+      # raw_data = filter.respond_to?(:dup) ? filter.dup : filter
+      # data = raw_data.is_a?(String) ? { name: raw_data } : raw_data
+      # lists = Lists.new(self)
+      # data.empty? ? lists : lists.find_by(data)
     end
 
     def connected?
@@ -36,6 +33,7 @@ module Mailchimp
       ) unless api_key_valid?
 
       @extra_headers = extra_headers
+      super self, { 'id' => '3.0' }
     end
 
     def api_key_valid?

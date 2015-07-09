@@ -26,8 +26,8 @@ module Mailchimp
         @first_name = @last_name = @name = nil
       end
 
-      def parse_name_from(new_data)
-        clean_data = new_data.deep_stringify_keys
+      def parse_name_from(data)
+        clean_data = data.deep_stringify_keys
         fname, lname = name_parts_from clean_data
 
         merge_fields = {}
@@ -38,13 +38,13 @@ module Mailchimp
         additional_data.merge clean_data
       end
 
-      def name_parts_from(clean_data)
-        new_name = clean_data.delete('name')
+      def name_parts_from(data)
+        new_name = data.delete('name')
         name_parts = new_name ? new_name.split : []
 
         [
-          clean_data.delete('first_name') || name_parts[0],
-          clean_data.delete('last_name') || name_parts[1]
+          data.delete('first_name') || name_parts[0],
+          data.delete('last_name') || name_parts[1]
         ]
       end
     end

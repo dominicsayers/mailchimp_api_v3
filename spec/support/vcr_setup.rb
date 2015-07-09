@@ -10,6 +10,6 @@ VCR.configure do |c|
     erb: true,
     decode_compressed_response: true,
     match_requests_on: [:method, :uri, :headers, :body],
-    allow_playback_repeats: true
+    allow_playback_repeats: false
   }
 end

@@ -12,6 +12,93 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
+      - apikey xxxxxxxxxx-us11
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/html; charset=iso-8859-1
+      Content-Length:
+      - '242'
+      Location:
+      - http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+      Date:
+      - Tue, 07 Jul 2015 11:29:28 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>301 Moved Permanently</title>
+        </head><body>
+        <h1>Moved Permanently</h1>
+        <p>The document has moved <a href="http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/">here</a>.</p>
+        </body></html>
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:28 GMT
+- request:
+    method: get
+    uri: http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey xxxxxxxxxx-us11
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Cookie:
+      - ''
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/problem+json; charset=utf-8
+      Content-Length:
+      - '250'
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 07 Jul 2015 11:29:28 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"http://kb.mailchimp.com/api/error-docs/401-api-key-invalid","title":"API
+        Key Invalid","status":401,"detail":"Your API key may be invalid, or you''ve
+        attempted to access the wrong datacenter.","instance":"983ad578-00e3-4155-86b8-017f8c979a7e"}'
+    http_version:
+  recorded_at: Tue, 07 Jul 2015 11:29:28 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
       - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
@@ -29,7 +116,7 @@ http_interactions:
       Location:
       - http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
       Date:
-      - Tue, 07 Jul 2015 12:02:22 GMT
+      - Tue, 07 Jul 2015 11:29:29 GMT
       Connection:
       - keep-alive
     body:
@@ -43,7 +130,7 @@ http_interactions:
         <p>The document has moved <a href="http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/">here</a>.</p>
         </body></html>
     http_version:
-  recorded_at: Tue, 07 Jul 2015 12:02:22 GMT
+  recorded_at: Tue, 07 Jul 2015 11:29:29 GMT
 - request:
     method: get
     uri: http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
@@ -73,13 +160,13 @@ http_interactions:
       Content-Length:
       - '2003'
       X-Request-Id:
-      - 54dc6a42-1f8d-4465-a513-8a42ffebdbab
+      - c0624e62-31b4-4299-95ec-38ad4b805a78
       Link:
       - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 12:02:22 GMT
+      - Tue, 07 Jul 2015 11:29:29 GMT
       Connection:
       - keep-alive
     body:
@@ -88,5 +175,5 @@ http_interactions:
         Arts","addr1":"300 Burdett Road","addr2":"London","city":"London","state":"","zip":"E14
         7DQ","country":"GB"},"last_login":"2015-07-07 11:24:31","total_subscribers":2,"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json"},{"rel":"lists","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json"},{"rel":"reports","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/reports","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Reports/Collection.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/CollectionLinks/Reports.json"},{"rel":"conversations","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/conversations","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Conversations/Collection.json"},{"rel":"campaigns","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/campaigns","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Campaigns/Collection.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/CollectionLinks/Campaigns.json"},{"rel":"automations","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/automations","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Automations/Collection.json"},{"rel":"templates","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/templates","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Templates/Collection.json"},{"rel":"file-manager","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/file-manager","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/FileManager/Namespace.json"},{"rel":"authorized-apps","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/authorized-apps","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/AuthorizedApps/Collection.json"}]}'
     http_version:
-  recorded_at: Tue, 07 Jul 2015 12:02:22 GMT
+  recorded_at: Tue, 07 Jul 2015 11:29:29 GMT
 recorded_with: VCR 2.9.3

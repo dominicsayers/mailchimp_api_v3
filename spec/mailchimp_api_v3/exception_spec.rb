@@ -2,7 +2,7 @@
 require 'spec_helper'
 require 'mailchimp_api_v3'
 
-describe Mailchimp::Exception::APIKeyError, vcr: { cassette_name: 'mailchimp' } do
+describe Mailchimp::Exception::APIKeyError, vcr: { cassette_name: 'exception' } do
   let(:bad_key) { 'xxxxxxxxxx-us11' }
 
   it 'raises an exception if the API key is not valid' do

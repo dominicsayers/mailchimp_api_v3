@@ -2,25 +2,29 @@ require 'yaml'
 require 'restclient'
 
 module Mailchimp
-  class Client
+  class Client < Instance
     module Remote
       def get(path = '', options = {})
-        managed_remote path, options, :get
+        managed_remote path, :get, options
       end
 
-      def post(data, path = '', options = {})
-        managed_remote path, options, :post, data
+      def post(path, data, options = {})
+        managed_remote path, :post, options, data
       end
 
-      def patch(data, path = '', options = {})
-        managed_remote path, options, :patch, data
+      def patch(path, data, options = {})
+        managed_remote path, :patch, options, data
+      end
+
+      def delete(path)
+        managed_remote path, :delete
       end
 
       private
 
       RETRY_EXCEPTIONS = [SocketError]
 
-      def managed_remote(path = '', options = {}, method = :get, payload = nil)
+      def managed_remote(path, method = :get, options = {}, payload = nil)
         headers_and_params = headers.merge params_from(options)
         YAML.load naked_remote("#{url_stub}#{path}", method, headers_and_params, payload)
       rescue *RETRY_EXCEPTIONS => e
@@ -51,11 +55,11 @@ module Mailchimp
         end
       end
 
-      def remote_no_payload(url, method = :get, headers_and_params = {})
+      def remote_no_payload(url, method, headers_and_params = {})
         RestClient.__send__ method, url, headers_and_params
       end
 
-      def remote_with_payload(url, payload, method = :post, headers_and_params = {})
+      def remote_with_payload(url, payload, method, headers_and_params = {})
         RestClient.__send__ method, url, payload.to_json, headers_and_params
       end
 
@@ -67,7 +71,7 @@ module Mailchimp
       end
 
       def url_stub
-        @url_stub ||= "https://#{dc}.api.mailchimp.com/3.0"
+        @url_stub ||= "https://#{dc}.api.mailchimp.com"
       end
 
       def params_from(options = {})
