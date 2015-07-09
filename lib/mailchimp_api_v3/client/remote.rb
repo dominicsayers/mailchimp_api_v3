@@ -47,7 +47,6 @@ module Mailchimp
       end
 
       def naked_remote(url, method, headers_and_params, payload = nil)
-        # puts url # debug
         if [:get, :delete, :head, :options].include? method
           remote_no_payload(url, method, headers_and_params)
         else

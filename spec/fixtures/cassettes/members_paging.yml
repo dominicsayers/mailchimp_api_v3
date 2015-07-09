@@ -1,0 +1,277 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1647'
+      X-Request-Id:
+      - 652e3f6c-ccf1-41e9-b759-a18c7732e8a7
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 01 Jul 2015 14:30:32 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
+        Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
+        7DQ","country":"262","phone":"07917153555"},"permission_reminder":"Opt-in
+        only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":2,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":2,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-06-27T14:50:39+00:00","last_unsub_date":""}}],"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json"},{"rel":"create","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"POST","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Instance.json"}],"total_items":1}'
+    http_version:
+  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '8557'
+      X-Request-Id:
+      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 01 Jul 2015 14:30:32 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
+        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
+        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"ddf039f00e38829042f5f52d2380f7d3","email_address":"somebody@example.com","unique_email_id":"d72b28f1ac","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Bela
+        Hanratty","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        07:16:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"80327f363d933cfc79f006cdfc97c1ab","email_address":"somebody@example.com","unique_email_id":"d3c8853070","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Esteban
+        Rodriguez","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"b8fb267cb40768c9b709b6cd74773def","email_address":"somebody@example.com","unique_email_id":"2d2edf878b","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"HNO
+        Cleland","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        02:23:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"}],"list_id":"c6d27c12c2","_links":[{"rel":"self","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json"},{"rel":"parent","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Instance.json"},{"rel":"create","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"POST","schema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"}],"total_items":37}'
+    http_version:
+  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '8557'
+      X-Request-Id:
+      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 01 Jul 2015 14:30:32 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
+        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
+        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"ddf039f00e38829042f5f52d2380f7d3","email_address":"somebody@example.com","unique_email_id":"d72b28f1ac","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Bela
+        Hanratty","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        07:16:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"80327f363d933cfc79f006cdfc97c1ab","email_address":"somebody@example.com","unique_email_id":"d3c8853070","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Esteban
+        Rodriguez","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"b8fb267cb40768c9b709b6cd74773def","email_address":"somebody@example.com","unique_email_id":"2d2edf878b","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"HNO
+        Cleland","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        02:23:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"}],"list_id":"c6d27c12c2","_links":[{"rel":"self","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json"},{"rel":"parent","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Instance.json"},{"rel":"create","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"POST","schema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"}],"total_items":37}'
+    http_version:
+  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '8557'
+      X-Request-Id:
+      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 01 Jul 2015 14:30:32 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
+        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
+        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"ddf039f00e38829042f5f52d2380f7d3","email_address":"somebody@example.com","unique_email_id":"d72b28f1ac","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Bela
+        Hanratty","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        07:16:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"80327f363d933cfc79f006cdfc97c1ab","email_address":"somebody@example.com","unique_email_id":"d3c8853070","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Esteban
+        Rodriguez","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"b8fb267cb40768c9b709b6cd74773def","email_address":"somebody@example.com","unique_email_id":"2d2edf878b","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"HNO
+        Cleland","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        02:23:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"}],"list_id":"c6d27c12c2","_links":[{"rel":"self","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json"},{"rel":"parent","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Instance.json"},{"rel":"create","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"POST","schema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"}],"total_items":37}'
+    http_version:
+  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+- request:
+    method: get
+    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=30
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
+      User-Agent:
+      - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '8557'
+      X-Request-Id:
+      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      Link:
+      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+        rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 01 Jul 2015 14:30:32 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
+        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
+        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
+        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
+        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
+        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"}],"total_items":37}'
+    http_version:
+  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+recorded_with: VCR 2.9.3

@@ -3,7 +3,7 @@ module Mailchimp
     def self.parse_invalid_resource_exception(data)
       detail = data['detail']
 
-      if detail.include? 'already exists'
+      if detail.include? 'already'
         fail Duplicate, data
       elsif detail.include? 'can\'t be blank'
         fail MissingField, data
@@ -15,7 +15,7 @@ module Mailchimp
     class DataException < RuntimeError
       def initialize(data)
         @data = data
-        super name || title
+        super detail
       end
 
       def method_missing(symbol)

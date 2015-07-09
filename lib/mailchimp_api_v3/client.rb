@@ -29,7 +29,7 @@ module Mailchimp
 
       fail(
         Mailchimp::Exception::APIKeyError,
-        'title' => "Invalid API key format: #{@api_key}"
+        'detail' => "Invalid API key format: #{@api_key}"
       ) unless api_key_valid?
 
       @extra_headers = extra_headers
