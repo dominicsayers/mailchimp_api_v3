@@ -24,28 +24,24 @@ module Mailchimp
       end
 
       def first_name
-        @first_name ||= merge_fields['FNAME']
+        merge_fields['FNAME']
       end
 
       def last_name
-        @last_name ||= merge_fields['LNAME']
+        merge_fields['LNAME']
       end
 
       def name
-        return @name if @name
         delim = first_name && last_name ? ' ' : ''
-        @name = "#{first_name}#{delim}#{last_name}"
+        "#{first_name}#{delim}#{last_name}"
+      end
+
+      def to_s
+        "#{name} <#{email_address}>"
       end
 
       def update(new_data)
-        invalidate_derived_fields
         super self.class.parse_name_from(new_data)
-      end
-
-      private
-
-      def invalidate_derived_fields
-        @first_name = @last_name = @name = nil
       end
     end
 

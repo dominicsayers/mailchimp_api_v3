@@ -53,14 +53,8 @@ module Mailchimp
 
     def method_missing(symbol, options = {})
       key = symbol.id2name
-      fail_unless_exists key, options
-      @data[key]
-    end
-
-    def fail_unless_exists(key, options = {})
-      return if @data.key? key
-      message = options == {} ? key : "#{key}: #{options}"
-      fail Mailchimp::Exception::UnknownAttribute, message
+      return @data[key] if @data.key? key
+      super
     end
 
     def subclass_instance_from(collection_class, id)
