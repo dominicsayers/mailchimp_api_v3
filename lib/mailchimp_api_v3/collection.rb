@@ -47,6 +47,18 @@ module Mailchimp
       create(data)
     end
 
+    def create_or_update(data)
+      clean_data = data.deep_stringify_keys
+
+      if clean_data.key? 'id'
+        instance = self.class::CHILD_CLASS.get @client, path, clean_data.delete('id')
+        instance.update(clean_data)
+      else
+        instance = find_by(clean_data)
+        instance ? instance.update(clean_data) : create(data)
+      end
+    end
+
     def name_field
       self.class.const_defined?(:NAME_FIELD) ? self.class::NAME_FIELD : 'name'
     end

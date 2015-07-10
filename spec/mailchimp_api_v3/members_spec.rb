@@ -67,5 +67,23 @@ describe Mailchimp::List::Members do
         member.delete # Tidy up
       end
     end
+
+    context '#create_or_update', vcr: { cassette_name: 'members_create_or_update' } do
+      let(:list) { Mailchimp.connect.lists 'My first list' }
+      let(:members) { list.members }
+
+      it 'creates when no match is found, udates otherwise' do
+        name = 'Cat Sayers'
+        data = { name: name, email_address: 'cat@sayers.cc', status: 'subscribed' }
+
+        # Create
+        expect { members.create_or_update data }.to change { list.members.count }.by(1)
+
+        # Update
+        data = { first_name: 'Catherine', email_address: 'cat@sayers.cc', status: 'subscribed' }
+        expect { members.create_or_update data }.not_to change { list.members.count }
+        expect(members.create_or_update data).to have_attributes name: 'Catherine Sayers'
+      end
+    end
   end
 end

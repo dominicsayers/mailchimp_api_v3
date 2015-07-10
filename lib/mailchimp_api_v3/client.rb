@@ -8,10 +8,6 @@ module Mailchimp
 
     def lists(*args)
       subclass_from Lists, *args
-      # raw_data = filter.respond_to?(:dup) ? filter.dup : filter
-      # data = raw_data.is_a?(String) ? { name: raw_data } : raw_data
-      # lists = Lists.new(self)
-      # data.empty? ? lists : lists.find_by(data)
     end
 
     def connected?
