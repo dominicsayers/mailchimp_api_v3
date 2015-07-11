@@ -62,7 +62,11 @@ member.update last_name: 'Williams'
 mailchimp = Mailchimp.connect
 members = mailchimp.lists('e73f5910ca').where last_name: 'Example'
 members.count # => 3
-member = mailchimp.lists('e73f5910ca').first_or_create email_address: 'ann@example.com', name: 'Ann Example', status: 'subscribed'
+member = mailchimp.lists('e73f5910ca').first_or_create(
+  email_address: 'ann@example.com', 
+  name: 'Ann Example', 
+  status: 'subscribed'
+)
 ```
 
 ```ruby
