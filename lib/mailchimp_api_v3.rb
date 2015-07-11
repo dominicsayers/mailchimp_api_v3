@@ -37,10 +37,6 @@ class String
     self =~ /\A[^@]+@[^@]+\z/
   end
 
-  def convert_to_id!
-    replace convert_to_id
-  end
-
   def convert_to_id
     OpenSSL::Digest.digest('MD5', self).unpack('H*').first
   end

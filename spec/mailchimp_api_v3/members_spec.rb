@@ -83,6 +83,11 @@ describe Mailchimp::List::Members do
         data = { first_name: 'Catherine', email_address: 'cat@sayers.cc', status: 'subscribed' }
         expect { members.create_or_update data }.not_to change { list.members.count }
         expect(members.create_or_update data).to have_attributes name: 'Catherine Sayers'
+
+        # Unless we supply an id or equivalent, we won't end up updating anything
+        data = { name: 'Catherine Sayers' }
+        expect { members.create_or_update data }.not_to change { list.members.count }
+        expect(members.create_or_update data).to have_attributes name: 'Catherine Sayers'
       end
     end
   end

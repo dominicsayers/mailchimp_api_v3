@@ -24,10 +24,17 @@ module Mailchimp
     end
 
     APIKeyError = Class.new(DataException)
+    NotFound = Class.new(DataException)
     Duplicate = Class.new(DataException)
     MissingField = Class.new(DataException)
     BadRequest = Class.new(DataException)
+
     UnknownAttribute = Class.new(RuntimeError)
     MissingId = Class.new(RuntimeError)
+
+    MAPPED_EXCEPTIONS = {
+      'RestClient::ResourceNotFound' => NotFound,
+      'RestClient::Unauthorized' => APIKeyError
+    }
   end
 end

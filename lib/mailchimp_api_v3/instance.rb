@@ -4,7 +4,9 @@ module Mailchimp
 
     def self.get(client, collection_path, id)
       data = client.get "#{collection_path}/#{id}"
-      new client, data, collection_path
+      data ? new(client, data, collection_path) : nil
+    rescue Mailchimp::Exception::NotFound
+      nil
     end
 
     # Instance methods

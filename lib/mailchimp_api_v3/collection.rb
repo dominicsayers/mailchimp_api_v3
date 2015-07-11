@@ -52,10 +52,9 @@ module Mailchimp
 
       if clean_data.key? 'id'
         instance = self.class::CHILD_CLASS.get @client, path, clean_data.delete('id')
-        instance.update(clean_data)
+        instance ? instance.update(clean_data) : create(clean_data)
       else
-        instance = find_by(clean_data)
-        instance ? instance.update(clean_data) : create(data)
+        find_by(clean_data)
       end
     end
 
