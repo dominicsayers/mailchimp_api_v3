@@ -3,7 +3,7 @@ module Mailchimp
     def self.parse_invalid_resource_exception(data)
       detail = data['detail']
 
-      if detail.include? 'already exists'
+      if detail.include? 'already'
         fail Duplicate, data
       elsif detail.include? 'can\'t be blank'
         fail MissingField, data
@@ -15,7 +15,7 @@ module Mailchimp
     class DataException < RuntimeError
       def initialize(data)
         @data = data
-        super name || title
+        super detail
       end
 
       def method_missing(symbol)
@@ -24,10 +24,17 @@ module Mailchimp
     end
 
     APIKeyError = Class.new(DataException)
+    NotFound = Class.new(DataException)
     Duplicate = Class.new(DataException)
     MissingField = Class.new(DataException)
     BadRequest = Class.new(DataException)
+
     UnknownAttribute = Class.new(RuntimeError)
     MissingId = Class.new(RuntimeError)
+
+    MAPPED_EXCEPTIONS = {
+      'RestClient::ResourceNotFound' => NotFound,
+      'RestClient::Unauthorized' => APIKeyError
+    }
   end
 end

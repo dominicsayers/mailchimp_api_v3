@@ -31,3 +31,13 @@ class Hash
     end
   end
 end
+
+class String
+  def could_be_an_email?
+    self =~ /\A[^@]+@[^@]+\z/
+  end
+
+  def convert_to_id
+    OpenSSL::Digest.digest('MD5', self).unpack('H*').first
+  end
+end

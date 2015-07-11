@@ -36,18 +36,19 @@ module Mailchimp
       end
 
       def managed_remote_exception(e)
-        case e.class.to_s # TODO: Find out why this won't match the class except by name string
-        when 'RestClient::Unauthorized'
-          fail Mailchimp::Exception::APIKeyError, YAML.load(e.http_body)
-        when 'RestClient::BadRequest'
-          Mailchimp::Exception.parse_invalid_resource_exception YAML.load(e.http_body)
+        data = YAML.load(e.http_body) if e.respond_to? :http_body
+        exception_class_name = e.class.to_s
+
+        if Mailchimp::Exception::MAPPED_EXCEPTIONS.key? exception_class_name
+          fail Mailchimp::Exception::MAPPED_EXCEPTIONS[exception_class_name], data
+        elsif exception_class_name == 'RestClient::BadRequest'
+          Mailchimp::Exception.parse_invalid_resource_exception data
         else
           fail e
         end
       end
 
       def naked_remote(url, method, headers_and_params, payload = nil)
-        # puts url # debug
         if [:get, :delete, :head, :options].include? method
           remote_no_payload(url, method, headers_and_params)
         else

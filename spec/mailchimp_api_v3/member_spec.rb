@@ -16,8 +16,8 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
     expect(member.name).to eq name
   end
 
-  it 'has an id' do
-    expect(member.id).to eq '140b91c107d2058dee730e75be0b1151'
+  it 'has a string repsentation' do
+    expect(member.to_s).to eq 'Ann Example <ann@sayers.cc>'
   end
 
   context 'updates name fields correctly' do

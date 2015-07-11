@@ -28,7 +28,7 @@ describe Mailchimp::Exception::UnknownAttribute, vcr: { cassette_name: 'mailchim
   end
 
   it 'fails if we ask for an unknown attribute' do
-    expect { account.blarbleferry }.to raise_error Mailchimp::Exception::UnknownAttribute
+    expect { account.blarbleferry }.to raise_error NoMethodError
   end
 end
 
