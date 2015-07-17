@@ -38,6 +38,6 @@ class String
   end
 
   def convert_to_id
-    OpenSSL::Digest.digest('MD5', self).unpack('H*').first
+    OpenSSL::Digest.digest('MD5', self.downcase).unpack('H*').first
   end
 end
