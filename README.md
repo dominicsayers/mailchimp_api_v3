@@ -4,7 +4,8 @@
 [![Build status](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/Xenapto/mailchimp_api_v3)
 [![Code quality](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)
 [![Coverage](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=develop)
-[![Dependency Status](https://gemnasium.com/Xenapto/mailchimp_api_v3.svg)](https://gemnasium.com/Xenapto/mailchimp_api_v3)
+[![Dependency Status](https://dependencyci.com/github/Xenapto/mailchimp_api_v3/badge)](https://dependencyci.com/github/Xenapto/mailchimp_api_v3)
+[![Dependency Status](https://gemnasium.com/Xenapto/mailchimp_api_v3.svg)](https://gemnasium.com/Xenapto/mailchimp_api_v3) [![Join the chat at https://gitter.im/Xenapto/mailchimp_api_v3](https://badges.gitter.im/Xenapto/mailchimp_api_v3.svg)](https://gitter.im/Xenapto/mailchimp_api_v3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A simple gem to interact with Mailchimp through the Mailchimp API v3
 
@@ -62,7 +63,7 @@ member.update last_name: 'Williams'
 mailchimp = Mailchimp.connect
 members = mailchimp.lists('e73f5910ca').where last_name: 'Example'
 members.count # => 3
-member = mailchimp.lists('e73f5910ca').first_or_create(
+member = mailchimp.lists('e73f5910ca').members.first_or_create(
   email_address: 'ann@example.com', 
   name: 'Ann Example', 
   status: 'subscribed'

@@ -40,7 +40,7 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
         }
       }
 
-      expect(member.update data).to have_attributes name: 'Ann Example'
+      expect(member.update(data)).to have_attributes name: 'Ann Example'
     end
   end
 end

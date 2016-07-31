@@ -39,6 +39,10 @@ describe Mailchimp::Client, vcr: { cassette_name: 'client' } do
       expect(list).to be_a Mailchimp::List
       expect(list.name).to eq 'My first list'
     end
+
+    it "doesn't respond to everything" do
+      expect(Mailchimp::Client.new.respond_to?(:zzz)).to be_falsey
+    end
   end
 
   context 'exceptions' do

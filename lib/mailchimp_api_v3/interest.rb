@@ -4,7 +4,7 @@ module Mailchimp
       Interest = Class.new(Instance)
 
       class Interests < Collection
-        PATH_KEY = DATA_KEY = 'interests'
+        PATH_KEY = DATA_KEY = 'interests'.freeze
         CHILD_CLASS = Interest
       end
     end

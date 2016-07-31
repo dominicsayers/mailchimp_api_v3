@@ -15,7 +15,7 @@ module Mailchimp
   end
 
   class Lists < Collection
-    PATH_KEY = DATA_KEY = 'lists'
+    PATH_KEY = DATA_KEY = 'lists'.freeze
     CHILD_CLASS = List
   end
 end

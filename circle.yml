@@ -1,4 +1,7 @@
 ---
+machine:
+  ruby:
+    version: 2.1.9
 notify:
   webhooks:
     # A list of hook hashes, containing the url field

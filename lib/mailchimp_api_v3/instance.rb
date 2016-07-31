@@ -59,6 +59,11 @@ module Mailchimp
       super
     end
 
+    def respond_to_missing?(symbol, *_)
+      key = symbol.id2name
+      @data.key? key
+    end
+
     def subclass_instance_from(collection_class, id)
       child_path = "#{path}/#{collection_class::PATH_KEY}"
       collection_class::CHILD_CLASS.get @client, child_path, id
