@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description = 'A simple gem to interact with Mailchimp through their API v3'
   spec.summary = 'Example: mailchimp.lists("My first list").member("ann@example.com")'
   spec.homepage = 'https://github.com/Xenapto/mailchimp_api_v3'
-  spec.license = 'BSD'
+  spec.license = 'BSD-2-Clause'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables = spec.files.grep(%r{^bin\/}) { |f| File.basename(f) }

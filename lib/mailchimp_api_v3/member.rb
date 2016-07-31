@@ -56,7 +56,7 @@ module Mailchimp
     end
 
     class Members < Collection
-      PATH_KEY = DATA_KEY = 'members'
+      PATH_KEY = DATA_KEY = 'members'.freeze
       CHILD_CLASS = Member
 
       def create(data)

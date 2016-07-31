@@ -22,7 +22,7 @@ module Mailchimp
 
       private
 
-      RETRY_EXCEPTIONS = [SocketError]
+      RETRY_EXCEPTIONS = [SocketError].freeze
 
       def managed_remote(path, method = :get, options = {}, payload = nil)
         headers_and_params = headers.merge params_from(options)
@@ -40,11 +40,11 @@ module Mailchimp
         exception_class_name = e.class.to_s
 
         if Mailchimp::Exception::MAPPED_EXCEPTIONS.key? exception_class_name
-          fail Mailchimp::Exception::MAPPED_EXCEPTIONS[exception_class_name], data
+          raise Mailchimp::Exception::MAPPED_EXCEPTIONS[exception_class_name], data
         elsif exception_class_name == 'RestClient::BadRequest'
           Mailchimp::Exception.parse_invalid_resource_exception data
         else
-          fail e
+          raise e
         end
       end
 
