@@ -18,7 +18,7 @@ module Mailchimp
         symbol.is_a?(Symbol) ? @data[symbol.id2name] : super
       end
 
-      def respond_to_missing?(symbol)
+      def respond_to_missing?(symbol, *_)
         symbol.is_a?(Symbol)
       end
     end

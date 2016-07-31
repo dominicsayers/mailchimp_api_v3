@@ -59,7 +59,7 @@ module Mailchimp
       super
     end
 
-    def respond_to_missing?(symbol)
+    def respond_to_missing?(symbol, *_)
       key = symbol.id2name
       @data.key? key
     end

@@ -50,4 +50,8 @@ describe Mailchimp::Exception::BadRequest do
     expect { Mailchimp::Exception.parse_invalid_resource_exception data }
       .to raise_error Mailchimp::Exception::BadRequest
   end
+
+  it 'responds to everything' do
+    expect(Mailchimp::Exception::BadRequest.new('xxx').respond_to?(:zzz)).to be_truthy
+  end
 end
