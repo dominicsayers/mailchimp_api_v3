@@ -1,7 +1,4 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
 describe Mailchimp::Client, vcr: { cassette_name: 'client' } do
   context 'unauthorized API key' do
     let(:bad_key) { 'xxxxxxxxxx-us11' }

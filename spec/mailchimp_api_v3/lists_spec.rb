@@ -1,7 +1,4 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
 describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   let(:lists) { Mailchimp.connect.lists }
 
@@ -10,6 +7,6 @@ describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   end
 
   it 'has a count' do
-    expect(lists.count).to eq 1
+    expect(lists.count).to eq 4
   end
 end

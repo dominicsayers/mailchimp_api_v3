@@ -1,8 +1,10 @@
 ---
 machine:
   ruby:
-    version: 2.1.9
-notify:
-  webhooks:
-    # A list of hook hashes, containing the url field
-    - url: https://coveralls.io/webhook?repo_token=SFdYC8cgEnwclAC8K7dzccQ5e16ZBDlPj
+    version: 2.3.1
+test:
+  override:
+    - RAILS_ENV=test bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml:
+        parallel: true
+        files:
+          - spec/**/*.rb

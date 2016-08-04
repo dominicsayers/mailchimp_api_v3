@@ -26,7 +26,7 @@ module Mailchimp
 
       def managed_remote(path, method = :get, options = {}, payload = nil)
         headers_and_params = headers.merge params_from(options)
-        YAML.load naked_remote("#{url_stub}#{path}", method, headers_and_params, payload)
+        YAML.load(naked_remote("#{url_stub}#{path}", method, headers_and_params, payload) || '')
       rescue *RETRY_EXCEPTIONS => e
         @retries ||= 0
         raise e if (@retries += 1) > 3
@@ -58,6 +58,8 @@ module Mailchimp
 
       def remote_no_payload(url, method, headers_and_params = {})
         RestClient.__send__ method, url, headers_and_params
+      rescue RestClient::NotFound
+        nil
       end
 
       def remote_with_payload(url, payload, method, headers_and_params = {})
@@ -66,6 +68,7 @@ module Mailchimp
 
       def headers
         @headers ||= {
+          'Accept' => '*/*; q=0.5, application/xml',
           'Authorization' => "apikey #{@api_key}",
           'User-Agent' => 'Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3'
         }.merge @extra_headers

@@ -1,12 +1,9 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
 describe Mailchimp::List::Members do
   context 'paging', vcr: { cassette_name: 'members_paging', allow_playback_repeats: true } do
     let(:page_size) { 10 }
-    let(:member_count) { 37 }
-    let(:list) { Mailchimp.connect.lists.first }
+    let(:member_count) { 19 }
+    let(:list) { Mailchimp.connect.lists 'API test list' }
     let(:members) { list.members 'page_size' => page_size }
 
     it 'is the expected class' do
@@ -20,7 +17,7 @@ describe Mailchimp::List::Members do
     it 'returns pages of members' do
       counts = []
       members.find_in_pages { |p| counts << p.count }
-      expect(counts).to eq [page_size, page_size, page_size, 7]
+      expect(counts).to eq [page_size, 9]
     end
 
     it 'returns all members by paging' do
@@ -72,7 +69,7 @@ describe Mailchimp::List::Members do
       let(:list) { Mailchimp.connect.lists 'My first list' }
       let(:members) { list.members }
 
-      it 'creates when no match is found, udates otherwise' do
+      it 'creates when no match is found, updates otherwise' do
         name = 'Cat Sayers'
         data = { name: name, email_address: 'cat@sayers.cc', status: 'subscribed' }
 

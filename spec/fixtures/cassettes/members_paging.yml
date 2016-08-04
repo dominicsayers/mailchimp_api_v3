@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -11,10 +11,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -25,28 +27,41 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1647'
+      - '4702'
       X-Request-Id:
-      - 652e3f6c-ccf1-41e9-b759-a18c7732e8a7
+      - b86d7bba-6002-41fa-a998-bb794bc81210
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 01 Jul 2015 14:30:32 GMT
+      - Thu, 04 Aug 2016 14:39:50 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
       string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
         Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
-        7DQ","country":"262","phone":"07917153555"},"permission_reminder":"Opt-in
-        only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":2,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":2,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-06-27T14:50:39+00:00","last_unsub_date":""}}],"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json"},{"rel":"create","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"POST","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Instance.json"}],"total_items":1}'
-    http_version:
-  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+        7DQ","country":"GB","phone":"07917153555"},"permission_reminder":"Opt-in only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":3,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":3,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-11T12:41:38+00:00","last_unsub_date":""}},{"id":"71937ea346","name":"My
+        second list","contact":{"company":"InSite Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"Select
+        One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"Test
+        list for Xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-09T10:17:28+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bsNMtP","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=71937ea346","beamer_address":"us11-6692a2b3c3-e843e438a6@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":1,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-09T13:32:01+00:00","last_unsub_date":""}},{"id":"3f19e5d463","name":"My
+        third list","contact":{"company":"InSite Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"Select
+        One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"For
+        xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-12T16:45:11+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bs3cI1","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=3f19e5d463","beamer_address":"us11-6692a2b3c3-8e485f6d99@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":4,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-14T11:28:57+00:00","last_unsub_date":""}},{"id":"a4598b5a35","name":"API
+        test list","contact":{"company":"administrator@xenapto.com","address1":"300
+        Burdett Road","address2":"London","city":"London","state":"","zip":"E14 7DQ","country":"GB","phone":""},"permission_reminder":"You
+        are test data for our API","use_archive_bar":true,"campaign_defaults":{"from_name":"Administrator","from_email":"administrator@xenapto.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2016-08-04T14:34:58+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/cauBmn","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=a4598b5a35","beamer_address":"us11-6692a2b3c3-3353aeaf0d@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":19,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":7,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-11-03T14:19:51+00:00","last_unsub_date":""}}],"total_items":4}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 14:39:50 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -55,10 +70,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -69,43 +86,41 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '8557'
+      - '4703'
       X-Request-Id:
-      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      - e82b44b1-0969-4922-be0e-428bbf29783a
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
-        rel="describedBy"
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 01 Jul 2015 14:30:32 GMT
+      - Thu, 04 Aug 2016 14:39:51 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
-        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
-        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"ddf039f00e38829042f5f52d2380f7d3","email_address":"somebody@example.com","unique_email_id":"d72b28f1ac","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Bela
-        Hanratty","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        07:16:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"80327f363d933cfc79f006cdfc97c1ab","email_address":"somebody@example.com","unique_email_id":"d3c8853070","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Esteban
-        Rodriguez","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"b8fb267cb40768c9b709b6cd74773def","email_address":"somebody@example.com","unique_email_id":"2d2edf878b","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"HNO
-        Cleland","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        02:23:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"}],"list_id":"c6d27c12c2","_links":[{"rel":"self","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json"},{"rel":"parent","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Instance.json"},{"rel":"create","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"POST","schema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"}],"total_items":37}'
-    http_version:
-  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+      string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
+        Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
+        7DQ","country":"GB","phone":"07917153555"},"permission_reminder":"Opt-in only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":3,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":3,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-11T12:41:38+00:00","last_unsub_date":""}},{"id":"71937ea346","name":"My
+        second list","contact":{"company":"InSite Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"Select
+        One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"Test
+        list for Xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-09T10:17:28+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bsNMtP","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=71937ea346","beamer_address":"us11-6692a2b3c3-e843e438a6@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":1,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-09T13:32:01+00:00","last_unsub_date":""}},{"id":"3f19e5d463","name":"My
+        third list","contact":{"company":"InSite Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"Select
+        One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"For
+        xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-12T16:45:11+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bs3cI1","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=3f19e5d463","beamer_address":"us11-6692a2b3c3-8e485f6d99@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":4,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-14T11:28:57+00:00","last_unsub_date":""}},{"id":"a4598b5a35","name":"API
+        test list","contact":{"company":"administrator@xenapto.com","address1":"300
+        Burdett Road","address2":"London","city":"London","state":"","zip":"E14 7DQ","country":"GB","phone":""},"permission_reminder":"You
+        are test data for our API","use_archive_bar":true,"campaign_defaults":{"from_name":"Administrator","from_email":"administrator@xenapto.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2016-08-04T14:34:58+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/cauBmn","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=a4598b5a35","beamer_address":"us11-6692a2b3c3-3353aeaf0d@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":19,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":7,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-11-03T14:19:51+00:00","last_unsub_date":""}}],"total_items":4}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 14:39:51 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=10
+    uri: https://us11.api.mailchimp.com/3.0/lists/a4598b5a35/members?count=10&exclude_fields=members._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -114,10 +129,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -128,43 +145,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '8557'
+      - '6887'
       X-Request-Id:
-      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      - 3c8355b9-69de-47d5-9e28-39467c121f97
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 01 Jul 2015 14:30:32 GMT
+      - Thu, 04 Aug 2016 14:40:15 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
-        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
-        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"ddf039f00e38829042f5f52d2380f7d3","email_address":"somebody@example.com","unique_email_id":"d72b28f1ac","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Bela
-        Hanratty","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        07:16:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"80327f363d933cfc79f006cdfc97c1ab","email_address":"somebody@example.com","unique_email_id":"d3c8853070","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Esteban
-        Rodriguez","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"b8fb267cb40768c9b709b6cd74773def","email_address":"somebody@example.com","unique_email_id":"2d2edf878b","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"HNO
-        Cleland","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        02:23:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"}],"list_id":"c6d27c12c2","_links":[{"rel":"self","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json"},{"rel":"parent","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Instance.json"},{"rel":"create","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"POST","schema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"}],"total_items":37}'
-    http_version:
-  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+      string: '{"members":[{"id":"f2b1659ef11eaad1c6f5550e758cf3e8","email_address":"administrator@xenapto.com","unique_email_id":"d49ce42876","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Xenapto","LNAME":"Administrator","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:57+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:13+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:57+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"8a5072384679d1ed9b102ba569544247","email_address":"dominic@sayers.cc","unique_email_id":"e97ef944ff","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Dominic","LNAME":"Sayers","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:57+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:13+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"6490c0b1c340940439023b620f8f76ec","email_address":"developers@xenapto.com","unique_email_id":"1af84da129","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Xenapto","LNAME":"Developer","MMERGE3":"Series
+        A","MMERGE4":"Radar, Fintech","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"185.53.227.185","timestamp_opt":"2015-06-30T13:00:06+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"e91fd4a11dc06ad5fde4b9b6557b4842","email_address":"developer1@xenapto.com","unique_email_id":"f27fb92cfc","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Xenapto","LNAME":"Developer","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"185.53.227.185","timestamp_opt":"2015-06-30T13:03:23+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"38ca1d94861aab4c0682dda9df6c0eba","email_address":"buddy.beatty@cummerata.info","unique_email_id":"fb6b076429","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Alaina","LNAME":"Rippin","MMERGE3":"","MMERGE4":"Pipeline,
+        plobbo, some, tags","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T11:11:25+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"2cb86948c3f1d5f19e2dc161832a724d","email_address":"mohr_gibson_and_marks@conngulgowski.biz","unique_email_id":"eed5a3ba08","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Gibson,","LNAME":"Mohr","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:15+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"091be666198eca9a033afe5965a91614","email_address":"schuster.and.jenkins.waelchi@kub.net","unique_email_id":"2f7ae1085a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Waelchi,","LNAME":"Jenkins","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:18+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"14f0ac91175b56358216fb188dbcb172","email_address":"watsica.schultz@koch.com","unique_email_id":"c0f124f9b9","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Watsica-Schultz","LNAME":"","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:20+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"51e406808dbe99ab0e42999440fa0ead","email_address":"lon@leannontreutel.net","unique_email_id":"c0317128af","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Merl","LNAME":"Sipes","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:21+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"4f4affc34b6854896df3a42b3f718a52","email_address":"lizeth@wizabode.org","unique_email_id":"acfbb96e3e","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Myriam","LNAME":"Mayert","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:25+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"}],"list_id":"a4598b5a35","total_items":19}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 14:40:15 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=20
+    uri: https://us11.api.mailchimp.com/3.0/lists/a4598b5a35/members?count=10&exclude_fields=members._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -173,10 +177,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -187,43 +193,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '8557'
+      - '6887'
       X-Request-Id:
-      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      - 30872427-48ba-4100-9c0d-32367dbddf72
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 01 Jul 2015 14:30:32 GMT
+      - Thu, 04 Aug 2016 14:40:16 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
-        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
-        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"ddf039f00e38829042f5f52d2380f7d3","email_address":"somebody@example.com","unique_email_id":"d72b28f1ac","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Bela
-        Hanratty","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        07:16:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"80327f363d933cfc79f006cdfc97c1ab","email_address":"somebody@example.com","unique_email_id":"d3c8853070","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Esteban
-        Rodriguez","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"b8fb267cb40768c9b709b6cd74773def","email_address":"somebody@example.com","unique_email_id":"2d2edf878b","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"HNO
-        Cleland","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        02:23:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":3,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"}],"list_id":"c6d27c12c2","_links":[{"rel":"self","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json"},{"rel":"parent","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2","method":"GET","targetSchema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Instance.json"},{"rel":"create","href":"https://us3.api.mailchimp.com/3.0/lists/c6d27c12c2/members","method":"POST","schema":"https://us3.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"}],"total_items":37}'
-    http_version:
-  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
+      string: '{"members":[{"id":"f2b1659ef11eaad1c6f5550e758cf3e8","email_address":"administrator@xenapto.com","unique_email_id":"d49ce42876","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Xenapto","LNAME":"Administrator","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:57+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:13+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:57+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"8a5072384679d1ed9b102ba569544247","email_address":"dominic@sayers.cc","unique_email_id":"e97ef944ff","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Dominic","LNAME":"Sayers","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:57+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:13+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"6490c0b1c340940439023b620f8f76ec","email_address":"developers@xenapto.com","unique_email_id":"1af84da129","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Xenapto","LNAME":"Developer","MMERGE3":"Series
+        A","MMERGE4":"Radar, Fintech","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"185.53.227.185","timestamp_opt":"2015-06-30T13:00:06+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"e91fd4a11dc06ad5fde4b9b6557b4842","email_address":"developer1@xenapto.com","unique_email_id":"f27fb92cfc","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Xenapto","LNAME":"Developer","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"185.53.227.185","timestamp_opt":"2015-06-30T13:03:23+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"38ca1d94861aab4c0682dda9df6c0eba","email_address":"buddy.beatty@cummerata.info","unique_email_id":"fb6b076429","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Alaina","LNAME":"Rippin","MMERGE3":"","MMERGE4":"Pipeline,
+        plobbo, some, tags","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T11:11:25+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"2cb86948c3f1d5f19e2dc161832a724d","email_address":"mohr_gibson_and_marks@conngulgowski.biz","unique_email_id":"eed5a3ba08","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Gibson,","LNAME":"Mohr","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:15+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"091be666198eca9a033afe5965a91614","email_address":"schuster.and.jenkins.waelchi@kub.net","unique_email_id":"2f7ae1085a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Waelchi,","LNAME":"Jenkins","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:18+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"14f0ac91175b56358216fb188dbcb172","email_address":"watsica.schultz@koch.com","unique_email_id":"c0f124f9b9","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Watsica-Schultz","LNAME":"","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:20+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"51e406808dbe99ab0e42999440fa0ead","email_address":"lon@leannontreutel.net","unique_email_id":"c0317128af","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Merl","LNAME":"Sipes","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:21+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"4f4affc34b6854896df3a42b3f718a52","email_address":"lizeth@wizabode.org","unique_email_id":"acfbb96e3e","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Myriam","LNAME":"Mayert","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:25+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"}],"list_id":"a4598b5a35","total_items":19}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 14:40:16 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/members?count=10&exclude_fields=members._links,_links&offset=30
+    uri: https://us11.api.mailchimp.com/3.0/lists/a4598b5a35/members?count=10&exclude_fields=members._links,_links&offset=10
     body:
       encoding: US-ASCII
       string: ''
@@ -232,10 +225,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -246,32 +241,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '8557'
+      - '6129'
       X-Request-Id:
-      - acf5f935-1ae1-4851-ad92-357d60b3ff2a
+      - 7b9bb407-2512-4e19-bb4d-e5c1d2f656c6
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 01 Jul 2015 14:30:32 GMT
+      - Thu, 04 Aug 2016 14:40:16 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"members":[{"id":"3387277a449fa6fe2d66f5185ef23d0d","email_address":"somebody@example.com","unique_email_id":"130333fe23","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"9f4ce260f5ba979eed17469c906d0215","email_address":"somebody@example.com","unique_email_id":"35bf97a7b5","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"dave","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"1c45af27937ca4047416dd5e39094a4f","email_address":"somebody@example.com","unique_email_id":"8f0a4838ed","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Omar
-        Liess","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        19:58:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"5294b6b042c69a70598fef2b5532451f","email_address":"somebody@example.com","unique_email_id":"83dfb3427c","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Chris
-        Handley","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.6667,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"06dc2c772ea2170f5a212dde3c14b793","email_address":"somebody@example.com","unique_email_id":"a81e1bbf30","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"shameelkhan363","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":1,"avg_click_rate":0.3333},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":4,"last_changed":"2015-02-24T11:06:16+00:00","language":"en","vip":false,"email_client":"","location":{"latitude":52.6474,"longitude":-2.70793,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"},{"id":"884db83a3347f02271fc2b26c742111b","email_address":"somebody@example.com","unique_email_id":"64404b810a","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"Reuben
-        Levy","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2015-02-24
-        22:18:00","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24 11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"c6d27c12c2"},{"id":"31722da12b62b65a02aaddad2491fb10","email_address":"somebody@example.com","unique_email_id":"7e294f60f2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"","LNAME":"bowoproperties","MMERGE3":"","MMERGE4":"","MMERGE5":0,"MMERGE6":"","MMERGE7":"","MMERGE8":"","MMERGE9":"","MMERGE10":"","MMERGE11":""},"interests":{"bcb5bf9704":false,"a3466d48ef":false,"108f2c6b6e":false},"stats":{"avg_open_rate":0.3333,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"85.92.193.106","timestamp_opt":"2015-02-24
-        11:06:16","member_rating":2,"last_changed":"2015-02-24T11:06:16+00:00","language":"","vip":false,"email_client":"","location":{"latitude":52.6045,"longitude":-2.60185,"gmtoff":0,"dstoff":1,"country_code":"GB","timezone":"Atlantic/Faroe"},"list_id":"c6d27c12c2"}],"total_items":37}'
-    http_version:
-  recorded_at: Wed, 01 Jul 2015 14:30:32 GMT
-recorded_with: VCR 2.9.3
+      string: '{"members":[{"id":"d2eaff3cbe76d2505979e9f2c7aea6b4","email_address":"onie@price.net","unique_email_id":"13ed341c3e","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Yadira","LNAME":"Rempel","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:26+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"b71f2e65570031b6d9ac00ac59c4b616","email_address":"caleb@kunde.net","unique_email_id":"19575c0fbf","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Wallace","LNAME":"Bergnaum","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:28+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"a2a51efa5c67ead435f1003bb85b67e0","email_address":"diana@mayer.biz","unique_email_id":"1b2e959444","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Doris","LNAME":"Baumbach","MMERGE3":"Enim
+        Deal","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:34+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"bfbecbe5bd47c54143dd93f429b4580b","email_address":"tina@gulgowskigusikowski.biz","unique_email_id":"5be427e0eb","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Katelynn","LNAME":"Swaniawski","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:36+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"bc5afa1fd53415c531529650b3bd8bef","email_address":"bernhard.schultz@waters.name","unique_email_id":"e77d7e18b2","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Lee","LNAME":"Boyer","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:43+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"6db5310391be1d3982e302aa94971387","email_address":"antonietta@torphyrutherford.name","unique_email_id":"5a36b5b9ae","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Nettie","LNAME":"Bogisich","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:45+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"de582d32026321b06ce341a3cf9f1507","email_address":"wilburn_heidenreich@connkilback.info","unique_email_id":"be8c62b5ec","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Miss","LNAME":"Elyse","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:47+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"849c121747b90b4bc472eb119c4ef2ce","email_address":"sophia@funkhilpert.net","unique_email_id":"89cfaf2901","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Orrin","LNAME":"Cronin","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:49+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"},{"id":"6c8457db988692f12af3400cf1bfb8c2","email_address":"eli@hand.name","unique_email_id":"a32648a393","email_type":"html","status":"subscribed","merge_fields":{"FNAME":"Garret","LNAME":"DuBuque","MMERGE3":"","MMERGE4":"","MMERGE5":"","MMERGE6":"2","MMERGE7":""},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"2016-08-04T14:36:58+00:00","ip_opt":"86.134.195.19","timestamp_opt":"2015-11-03T14:19:51+00:00","member_rating":2,"last_changed":"2016-08-04T14:36:58+00:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"a4598b5a35"}],"list_id":"a4598b5a35","total_items":19}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 14:40:16 GMT
+recorded_with: VCR 3.0.3

@@ -17,10 +17,11 @@ Gem::Specification.new do |spec|
   spec.test_files = spec.files.grep(%r{^(test|spec|features|coverage)\/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rest-client', '~> 1'
+  spec.add_runtime_dependency 'rest-client', '~> 2' # https://github.com/rest-client/rest-client/issues/369
 
   spec.add_development_dependency 'bundler', '~> 1'
   spec.add_development_dependency 'rspec', '~> 3'
+  spec.add_development_dependency 'fuubar', '~> 2'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0'
   spec.add_development_dependency 'simplecov', '~> 0'
   spec.add_development_dependency 'coveralls', '~> 0'

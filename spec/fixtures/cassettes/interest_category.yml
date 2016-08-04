@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -11,10 +11,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -25,28 +27,41 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1173'
+      - '4704'
       X-Request-Id:
-      - 021c88c6-4cd3-4ebb-bf28-aab9e9b0d912
+      - 25523bef-618e-4f96-8d1f-21288f68e2b1
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:29 GMT
+      - Thu, 04 Aug 2016 15:10:19 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
       string: '{"lists":[{"id":"e73f5910ca","name":"My first list","contact":{"company":"InSite
         Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"","zip":"E14
-        7DQ","country":"262","phone":"07917153555"},"permission_reminder":"Opt-in
-        only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":2,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":2,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-06-27T14:50:39+00:00","last_unsub_date":""}}],"total_items":1}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:29 GMT
+        7DQ","country":"GB","phone":"07917153555"},"permission_reminder":"Opt-in only","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@sayers.cc","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-06-27T14:49:18+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/brGTO9","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=e73f5910ca","beamer_address":"us11-6692a2b3c3-bcd2a8b144@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":3,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":3,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2016-08-04T14:56:19+00:00","last_unsub_date":""}},{"id":"71937ea346","name":"My
+        second list","contact":{"company":"InSite Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"Select
+        One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"Test
+        list for Xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-09T10:17:28+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bsNMtP","subscribe_url_long":"http://insitearts.us11.list-manage1.com/subscribe?u=1dbca289fd41b54838bcbb501&id=71937ea346","beamer_address":"us11-6692a2b3c3-e843e438a6@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":1,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-09T13:32:01+00:00","last_unsub_date":""}},{"id":"3f19e5d463","name":"My
+        third list","contact":{"company":"InSite Arts","address1":"300 Burdett Road","address2":"London","city":"London","state":"Select
+        One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"For
+        xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
+        Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-12T16:45:11+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bs3cI1","subscribe_url_long":"http://insitearts.us11.list-manage2.com/subscribe?u=1dbca289fd41b54838bcbb501&id=3f19e5d463","beamer_address":"us11-6692a2b3c3-8e485f6d99@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":4,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-14T11:28:57+00:00","last_unsub_date":""}},{"id":"a4598b5a35","name":"API
+        test list","contact":{"company":"administrator@xenapto.com","address1":"300
+        Burdett Road","address2":"London","city":"London","state":"","zip":"E14 7DQ","country":"GB","phone":""},"permission_reminder":"You
+        are test data for our API","use_archive_bar":true,"campaign_defaults":{"from_name":"Administrator","from_email":"administrator@xenapto.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2016-08-04T14:34:58+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/cauBmn","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=a4598b5a35","beamer_address":"us11-6692a2b3c3-3353aeaf0d@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":19,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":7,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-11-03T14:19:51+00:00","last_unsub_date":""}}],"total_items":4}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:10:19 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -55,10 +70,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -69,26 +86,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '145'
+      - '241'
       X-Request-Id:
-      - e610b9ca-0b1c-4963-8ccf-a0dfa238bd65
+      - e128e4d4-b84a-4c4e-baa2-35b334fef2ae
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:29 GMT
+      - Thu, 04 Aug 2016 15:10:19 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"f349987e8f","title":"Sex","display_order":0,"type":"radio"}],"total_items":1}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:29 GMT
+      string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"f349987e8f","title":"Sex","display_order":0,"type":"radio"},{"list_id":"e73f5910ca","id":"7b24b8a11a","title":"Days","display_order":1,"type":"checkboxes"}],"total_items":2}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:10:19 GMT
 - request:
     method: post
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
     body:
       encoding: UTF-8
       string: '{"title":"Days","type":"checkboxes"}'
@@ -97,12 +116,14 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
       Content-Length:
       - '36'
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -113,26 +134,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1210'
+      - '1399'
       X-Request-Id:
-      - f9eb5660-4f9d-4469-bf95-e116286ce36d
+      - 474c1fc0-f553-4510-a603-34b393860d24
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:29 GMT
+      - Thu, 04 Aug 2016 15:11:02 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"list_id":"e73f5910ca","id":"35d063e4a8","title":"Days","display_order":1,"type":"checkboxes","_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json"},{"rel":"update","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8","method":"PATCH","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"delete","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8","method":"DELETE"},{"rel":"interests","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json"}]}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:29 GMT
+      string: '{"list_id":"e73f5910ca","id":"e5b49d3b2a","title":"Days","display_order":1,"type":"checkboxes","_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/InterestCategories.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a","method":"PATCH","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a","method":"DELETE"},{"rel":"interests","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"}]}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:02 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -141,10 +164,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -157,24 +182,26 @@ http_interactions:
       Content-Length:
       - '82'
       X-Request-Id:
-      - 02ea29dc-b178-43cd-9cdf-e4c77d6c882e
+      - dff00057-227e-490f-aa9f-dfc2d2aec712
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:30 GMT
+      - Thu, 04 Aug 2016 15:11:03 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"interests":[],"list_id":"e73f5910ca","category_id":"35d063e4a8","total_items":0}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:30 GMT
+      string: '{"interests":[],"list_id":"e73f5910ca","category_id":"e5b49d3b2a","total_items":0}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:03 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -183,10 +210,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -199,24 +228,26 @@ http_interactions:
       Content-Length:
       - '82'
       X-Request-Id:
-      - b4378fd7-2f5b-4c37-9c5b-e70121c5d87a
+      - c6048e1a-f9bb-485f-9e5c-e33ea808ecfb
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:30 GMT
+      - Thu, 04 Aug 2016 15:11:03 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"interests":[],"list_id":"e73f5910ca","category_id":"35d063e4a8","total_items":0}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:30 GMT
+      string: '{"interests":[],"list_id":"e73f5910ca","category_id":"e5b49d3b2a","total_items":0}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:03 GMT
 - request:
     method: post
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests
     body:
       encoding: UTF-8
       string: '{"name":"Monday"}'
@@ -225,12 +256,14 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
       Content-Length:
       - '17'
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -241,26 +274,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1038'
+      - '1151'
       X-Request-Id:
-      - c9ff51b3-85ed-4662-8689-1b114a0202e8
+      - 8013f35c-65f1-418d-9636-5d79bab177cc
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:30 GMT
+      - Thu, 04 Aug 2016 15:11:03 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"category_id":"35d063e4a8","list_id":"e73f5910ca","id":"05aaf669a7","name":"Monday","display_order":1,"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests/05aaf669a7","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json"},{"rel":"update","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests/05aaf669a7","method":"PATCH","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests/05aaf669a7","method":"DELETE"}]}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:30 GMT
+      string: '{"category_id":"e5b49d3b2a","list_id":"e73f5910ca","id":"242ed4aa50","name":"Monday","subscriber_count":"0","display_order":1,"_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests/242ed4aa50","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests/242ed4aa50","method":"PATCH","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests/242ed4aa50","method":"DELETE"}]}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:03 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -269,10 +304,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -283,26 +320,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '185'
+      - '208'
       X-Request-Id:
-      - 77531c90-afa1-4b43-b52a-b78af37a0cf0
+      - 8fe2d4ea-c2cc-4455-8a11-298c3ba6639f
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:30 GMT
+      - Thu, 04 Aug 2016 15:11:03 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"interests":[{"category_id":"35d063e4a8","list_id":"e73f5910ca","id":"05aaf669a7","name":"Monday","display_order":1}],"list_id":"e73f5910ca","category_id":"35d063e4a8","total_items":1}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:30 GMT
+      string: '{"interests":[{"category_id":"e5b49d3b2a","list_id":"e73f5910ca","id":"242ed4aa50","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"e5b49d3b2a","total_items":1}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:03 GMT
 - request:
     method: post
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests
     body:
       encoding: UTF-8
       string: '{"name":"Tuesday"}'
@@ -311,12 +350,14 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
       Content-Length:
       - '18'
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -327,26 +368,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1039'
+      - '1152'
       X-Request-Id:
-      - 87c48f47-6809-4990-9077-b98150c4d789
+      - 2d1e81f4-54e2-4c67-839d-1ef29d81db51
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:31 GMT
+      - Thu, 04 Aug 2016 15:11:04 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"category_id":"35d063e4a8","list_id":"e73f5910ca","id":"471894ead2","name":"Tuesday","display_order":2,"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests/471894ead2","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json"},{"rel":"update","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests/471894ead2","method":"PATCH","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests/471894ead2","method":"DELETE"}]}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:31 GMT
+      string: '{"category_id":"e5b49d3b2a","list_id":"e73f5910ca","id":"fc79f56941","name":"Tuesday","subscriber_count":"0","display_order":2,"_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests/fc79f56941","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests/fc79f56941","method":"PATCH","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests/fc79f56941","method":"DELETE"}]}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:04 GMT
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/35d063e4a8/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/e5b49d3b2a/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -355,10 +398,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      Host:
+      - us11.api.mailchimp.com
   response:
     status:
       code: 200
@@ -369,21 +414,23 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '290'
+      - '336'
       X-Request-Id:
-      - 834e9768-ae67-41af-a5b4-2540b0c8ac06
+      - b82a697c-a5b1-44fd-b002-4c2dcb90a19c
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 11:45:31 GMT
+      - Thu, 04 Aug 2016 15:11:04 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"interests":[{"category_id":"35d063e4a8","list_id":"e73f5910ca","id":"05aaf669a7","name":"Monday","display_order":1},{"category_id":"35d063e4a8","list_id":"e73f5910ca","id":"471894ead2","name":"Tuesday","display_order":2}],"list_id":"e73f5910ca","category_id":"35d063e4a8","total_items":2}'
-    http_version:
-  recorded_at: Tue, 07 Jul 2015 11:45:31 GMT
-recorded_with: VCR 2.9.3
+      string: '{"interests":[{"category_id":"e5b49d3b2a","list_id":"e73f5910ca","id":"242ed4aa50","name":"Monday","subscriber_count":"0","display_order":1},{"category_id":"e5b49d3b2a","list_id":"e73f5910ca","id":"fc79f56941","name":"Tuesday","subscriber_count":"0","display_order":2}],"list_id":"e73f5910ca","category_id":"e5b49d3b2a","total_items":2}'
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 15:11:04 GMT
+recorded_with: VCR 3.0.3

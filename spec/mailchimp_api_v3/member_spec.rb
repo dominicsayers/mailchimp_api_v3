@@ -1,7 +1,4 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
 describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }

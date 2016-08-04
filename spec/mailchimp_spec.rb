@@ -1,7 +1,4 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
 describe Mailchimp do
   it 'does not attempt to connect without an API key in the right format' do
     expect { Mailchimp.connect '' }.to raise_error { |e|
