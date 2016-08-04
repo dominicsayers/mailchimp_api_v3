@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mailchimp
   class List
     class InterestCategory < Instance
@@ -9,9 +10,9 @@ module Mailchimp
     end
 
     class InterestCategories < Collection
-      NAME_FIELD = 'title'.freeze
-      PATH_KEY = 'interest-categories'.freeze
-      DATA_KEY = 'categories'.freeze
+      NAME_FIELD = 'title'
+      PATH_KEY = 'interest-categories'
+      DATA_KEY = 'categories'
       CHILD_CLASS = InterestCategory
     end
   end

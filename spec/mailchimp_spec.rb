@@ -1,4 +1,5 @@
 # encoding: utf-8
+# frozen_string_literal: true
 describe Mailchimp do
   it 'does not attempt to connect without an API key in the right format' do
     expect { Mailchimp.connect '' }.to raise_error { |e|

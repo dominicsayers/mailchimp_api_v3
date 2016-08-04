@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'yaml'
 require 'restclient'
 
@@ -49,7 +50,7 @@ module Mailchimp
       end
 
       def naked_remote(url, method, headers_and_params, payload = nil)
-        if [:get, :delete, :head, :options].include? method
+        if %i(get delete head options).include? method
           remote_no_payload(url, method, headers_and_params)
         else
           remote_with_payload(url, payload, method, headers_and_params)

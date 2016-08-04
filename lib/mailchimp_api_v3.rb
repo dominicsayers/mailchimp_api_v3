@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'mailchimp_api_v3/version'
 require 'mailchimp_api_v3/collection/paging'
 require 'mailchimp_api_v3/collection'

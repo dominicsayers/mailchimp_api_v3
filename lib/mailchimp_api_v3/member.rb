@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mailchimp
   class List
     class Member < Instance
@@ -56,7 +57,7 @@ module Mailchimp
     end
 
     class Members < Collection
-      PATH_KEY = DATA_KEY = 'members'.freeze
+      PATH_KEY = DATA_KEY = 'members'
       CHILD_CLASS = Member
 
       def create(data)

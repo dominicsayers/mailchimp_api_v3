@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 unless ENV['NO_SIMPLECOV']
   require 'simplecov'
   require 'coveralls'

@@ -1,4 +1,5 @@
 # encoding: utf-8
+# frozen_string_literal: true
 describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   let(:lists) { Mailchimp.connect.lists }
 
