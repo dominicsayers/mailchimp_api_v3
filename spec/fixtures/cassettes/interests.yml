@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -31,7 +31,7 @@ http_interactions:
       X-Request-Id:
       - 7e719a98-a038-41e0-83ec-71804ee0db1f
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
@@ -54,11 +54,11 @@ http_interactions:
         One","zip":"E14 7DQ","country":"GB","phone":"02075372125"},"permission_reminder":"For
         xenapto testing","use_archive_bar":true,"campaign_defaults":{"from_name":"Sam
         Sayers","from_email":"sam@insitearts.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2015-07-12T16:45:11+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/bs3cI1","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=3f19e5d463","beamer_address":"us11-6692a2b3c3-8e485f6d99@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":4,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":2,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-07-14T11:28:57+00:00","last_unsub_date":""}}],"total_items":3}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:10 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories?count=500&exclude_fields=categories._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -70,9 +70,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -87,7 +87,7 @@ http_interactions:
       X-Request-Id:
       - 81dfcadf-c979-4ecb-b741-cbbc8d02da80
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -100,11 +100,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"list_id":"e73f5910ca","categories":[{"list_id":"e73f5910ca","id":"f349987e8f","title":"Sex","display_order":0,"type":"radio"}],"total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:10 GMT
 - request:
     method: post
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories
     body:
       encoding: UTF-8
       string: '{"title":"Days","type":"checkboxes"}'
@@ -116,11 +116,11 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Content-Length:
       - '36'
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -135,7 +135,7 @@ http_interactions:
       X-Request-Id:
       - 1e976a83-2bdc-4854-b940-bdb26b1ba40e
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -147,12 +147,12 @@ http_interactions:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"list_id":"e73f5910ca","id":"4df12c7b69","title":"Days","display_order":1,"type":"checkboxes","_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/InterestCategories.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69","method":"PATCH","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69","method":"DELETE"},{"rel":"interests","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"}]}'
-    http_version: 
+      string: '{"list_id":"e73f5910ca","id":"4df12c7b69","title":"Days","display_order":1,"type":"checkboxes","_links":[{"rel":"self","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"parent","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/InterestCategories.json"},{"rel":"update","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69","method":"PATCH","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Instance.json"},{"rel":"delete","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69","method":"DELETE"},{"rel":"interests","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"}]}'
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:11 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -164,9 +164,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -181,7 +181,7 @@ http_interactions:
       X-Request-Id:
       - cdeecd23-92d3-448e-a5b3-f6b3b9a2394a
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -194,11 +194,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":0}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:11 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -210,9 +210,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -227,7 +227,7 @@ http_interactions:
       X-Request-Id:
       - d6edeeb0-0259-46a3-9618-90f82394f118
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -240,11 +240,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":0}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:19 GMT
 - request:
     method: post
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests
     body:
       encoding: UTF-8
       string: '{"name":"Monday"}'
@@ -256,11 +256,11 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Content-Length:
       - '17'
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -275,7 +275,7 @@ http_interactions:
       X-Request-Id:
       - dff34019-9112-4555-9016-0e5d73e56a57
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -287,12 +287,12 @@ http_interactions:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1,"_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24","method":"PATCH","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24","method":"DELETE"}]}'
-    http_version: 
+      string: '{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1,"_links":[{"rel":"self","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"},{"rel":"update","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24","method":"PATCH","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24","method":"DELETE"}]}'
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:20 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -304,9 +304,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -321,7 +321,7 @@ http_interactions:
       X-Request-Id:
       - 8eb85bbd-50ab-4558-8548-78ab8ceaedf8
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -334,11 +334,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:20 GMT
 - request:
     method: post
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests
     body:
       encoding: UTF-8
       string: '{"name":"Monday"}'
@@ -350,11 +350,11 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Content-Length:
       - '17'
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 400
@@ -369,7 +369,7 @@ http_interactions:
       X-Request-Id:
       - f30fbe11-958f-4646-b29b-5147ca2a4e16
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
@@ -383,11 +383,11 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Invalid
         Resource","status":400,"detail":"Cannot add \"Monday\" because it already
         exists on the list.","instance":""}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:21 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -399,9 +399,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -416,7 +416,7 @@ http_interactions:
       X-Request-Id:
       - b2d4449c-28ac-44e1-adab-a72d5fa4a206
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -429,11 +429,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:21 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -445,9 +445,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -462,7 +462,7 @@ http_interactions:
       X-Request-Id:
       - 3fd0e1e4-534b-4296-8e96-c79885833c2e
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -475,11 +475,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:21 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -491,9 +491,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -508,7 +508,7 @@ http_interactions:
       X-Request-Id:
       - 02bafd6d-e7a0-4789-98ed-157f58cd4b78
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -521,11 +521,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:21 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -537,9 +537,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -554,7 +554,7 @@ http_interactions:
       X-Request-Id:
       - 7e808892-fdd4-4a62-9dad-f4479834ea53
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -567,11 +567,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:22 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -583,9 +583,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -600,7 +600,7 @@ http_interactions:
       X-Request-Id:
       - f49a8513-b59b-476e-8a50-ad259ef2b3bf
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -613,11 +613,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"a7bd8bba24","name":"Monday","subscriber_count":"0","display_order":1}],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":1}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:22 GMT
 - request:
     method: delete
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/a7bd8bba24
     body:
       encoding: US-ASCII
       string: ''
@@ -629,9 +629,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 204
@@ -654,11 +654,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:22 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -670,9 +670,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -687,7 +687,7 @@ http_interactions:
       X-Request-Id:
       - af31fdb1-f572-4c3b-b978-86df2541b99c
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -700,11 +700,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":0}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:22 GMT
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests?count=500&exclude_fields=interests._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -716,9 +716,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -733,7 +733,7 @@ http_interactions:
       X-Request-Id:
       - f061a9ab-873b-4097-a301-643ba399ad19
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -746,11 +746,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"interests":[],"list_id":"e73f5910ca","category_id":"4df12c7b69","total_items":0}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:23 GMT
 - request:
     method: post
-    uri: https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests
     body:
       encoding: UTF-8
       string: '{"name":"Tuesday"}'
@@ -762,11 +762,11 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Content-Length:
       - '18'
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -781,7 +781,7 @@ http_interactions:
       X-Request-Id:
       - 9d3ff4f5-991d-4624-bf4d-aafeac6d87e3
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json>;
         rel="describedBy"
       Vary:
       - Accept-Encoding
@@ -793,7 +793,7 @@ http_interactions:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"4e52548ea0","name":"Tuesday","subscriber_count":"0","display_order":1,"_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/4e52548ea0","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/4e52548ea0","method":"PATCH","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/4e52548ea0","method":"DELETE"}]}'
-    http_version: 
+      string: '{"category_id":"4df12c7b69","list_id":"e73f5910ca","id":"4e52548ea0","name":"Tuesday","subscriber_count":"0","display_order":1,"_links":[{"rel":"self","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/4e52548ea0","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"parent","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Interests.json"},{"rel":"update","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/4e52548ea0","method":"PATCH","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Interests/Instance.json"},{"rel":"delete","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists/e73f5910ca/interest-categories/4df12c7b69/interests/4e52548ea0","method":"DELETE"}]}'
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:31:23 GMT
 recorded_with: VCR 3.0.3

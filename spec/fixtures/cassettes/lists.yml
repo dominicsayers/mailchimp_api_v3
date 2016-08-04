@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://us11.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists?count=500&exclude_fields=lists._links,_links&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
       Authorization:
-      - apikey 4e17ffe30d01da94c1615c4b587b3732-us11
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
       Host:
-      - us11.api.mailchimp.com
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -31,7 +31,7 @@ http_interactions:
       X-Request-Id:
       - b71e4d31-4750-41ae-8808-b5e21c2b084a
       Link:
-      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Collection.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
@@ -57,6 +57,6 @@ http_interactions:
         test list","contact":{"company":"administrator@xenapto.com","address1":"300
         Burdett Road","address2":"London","city":"London","state":"","zip":"E14 7DQ","country":"GB","phone":""},"permission_reminder":"You
         are test data for our API","use_archive_bar":true,"campaign_defaults":{"from_name":"Administrator","from_email":"administrator@xenapto.com","subject":"","language":"en"},"notify_on_subscribe":"","notify_on_unsubscribe":"","date_created":"2016-08-04T14:34:58+00:00","list_rating":0,"email_type_option":false,"subscribe_url_short":"http://eepurl.com/cauBmn","subscribe_url_long":"http://insitearts.us11.list-manage.com/subscribe?u=1dbca289fd41b54838bcbb501&id=a4598b5a35","beamer_address":"us11-6692a2b3c3-3353aeaf0d@inbound.mailchimp.com","visibility":"pub","modules":[],"stats":{"member_count":19,"unsubscribe_count":0,"cleaned_count":0,"member_count_since_send":0,"unsubscribe_count_since_send":0,"cleaned_count_since_send":0,"campaign_count":0,"campaign_last_sent":"","merge_field_count":7,"avg_sub_rate":0,"avg_unsub_rate":0,"target_sub_rate":0,"open_rate":0,"click_rate":0,"last_sub_date":"2015-11-03T14:19:51+00:00","last_unsub_date":""}}],"total_items":4}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 04 Aug 2016 14:56:43 GMT
 recorded_with: VCR 3.0.3
