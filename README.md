@@ -1,4 +1,6 @@
 ## Mailchimp API v3
+
+[![Join the chat at https://gitter.im/Xenapto/mailchimp_api_v3](https://badges.gitter.im/Xenapto/mailchimp_api_v3.svg)](https://gitter.im/Xenapto/mailchimp_api_v3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Gem Version](https://badge.fury.io/rb/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
 [![Gem downloads](https://img.shields.io/gem/dt/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
 [![Build status](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/Xenapto/mailchimp_api_v3)
