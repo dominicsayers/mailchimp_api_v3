@@ -1,12 +1,12 @@
 ## Mailchimp API v3
 [![Gem Version](https://badge.fury.io/rb/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
 [![Gem downloads](https://img.shields.io/gem/dt/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
-[![Build status](https://img.shields.io/circleci/project/Xenapto/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/Xenapto/mailchimp_api_v3)
-[![Code quality](http://img.shields.io/codeclimate/github/Xenapto/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/Xenapto/mailchimp_api_v3)
-[![Coverage](https://img.shields.io/coveralls/Xenapto/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/Xenapto/mailchimp_api_v3?branch=develop)
-[![Dependency Status](https://dependencyci.com/github/Xenapto/mailchimp_api_v3/badge)](https://dependencyci.com/github/Xenapto/mailchimp_api_v3)
-[![Security](https://hakiri.io/github/Xenapto/mailchimp_api_v3/develop.svg)](https://hakiri.io/github/Xenapto/mailchimp_api_v3/develop)
-[![Join the chat at https://gitter.im/Xenapto/mailchimp_api_v3](https://badges.gitter.im/Xenapto/mailchimp_api_v3.svg)](https://gitter.im/Xenapto/mailchimp_api_v3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build status](https://img.shields.io/circleci/project/dominicsayers/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/dominicsayers/mailchimp_api_v3)
+[![Code quality](http://img.shields.io/codeclimate/github/dominicsayers/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/dominicsayers/mailchimp_api_v3)
+[![Coverage](https://img.shields.io/coveralls/dominicsayers/mailchimp_api_v3/develop.svg?style=flat)](https://coveralls.io/r/dominicsayers/mailchimp_api_v3?branch=develop)
+[![Dependency Status](https://dependencyci.com/github/dominicsayers/mailchimp_api_v3/badge)](https://dependencyci.com/github/dominicsayers/mailchimp_api_v3)
+[![Security](https://hakiri.io/github/dominicsayers/mailchimp_api_v3/develop.svg)](https://hakiri.io/github/dominicsayers/mailchimp_api_v3/develop)
+[![Join the chat at https://gitter.im/dominicsayers/mailchimp_api_v3](https://badges.gitter.im/dominicsayers/mailchimp_api_v3.svg)](https://gitter.im/dominicsayers/mailchimp_api_v3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A simple gem to interact with Mailchimp through the Mailchimp API v3.
 
