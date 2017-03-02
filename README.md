@@ -8,7 +8,11 @@
 [![Security](https://hakiri.io/github/Xenapto/mailchimp_api_v3/develop.svg)](https://hakiri.io/github/Xenapto/mailchimp_api_v3/develop)
 [![Join the chat at https://gitter.im/Xenapto/mailchimp_api_v3](https://badges.gitter.im/Xenapto/mailchimp_api_v3.svg)](https://gitter.im/Xenapto/mailchimp_api_v3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A simple gem to interact with Mailchimp through the Mailchimp API v3
+A simple gem to interact with Mailchimp through the Mailchimp API v3.
+
+### A note on Gibbon
+
+I wrote this gem when [Gibbon](https://github.com/amro/gibbon) did not support Mailchimp's API v3. I believe it now does, and is a more regularly-maintained gem. You are welcome to use my gem but I don't have a great deal of time to deal with issues or enhance it further.
 
 ### Project status
 
