@@ -3,7 +3,7 @@
 [![Gem downloads](https://img.shields.io/gem/dt/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
 [![Build status](https://img.shields.io/circleci/project/dominicsayers/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/dominicsayers/mailchimp_api_v3)
 [![Code quality](http://img.shields.io/codeclimate/github/dominicsayers/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/dominicsayers/mailchimp_api_v3)
-[![Coverage Status](https://coveralls.io/repos/github/Xenapto/mailchimp_api_v3/badge.svg?branch=develop)](https://coveralls.io/github/Xenapto/mailchimp_api_v3?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/dominicsayers/mailchimp_api_v3/badge.svg?branch=develop)](https://coveralls.io/github/dominicsayers/mailchimp_api_v3?branch=develop)
 [![Dependency Status](https://dependencyci.com/github/dominicsayers/mailchimp_api_v3/badge)](https://dependencyci.com/github/dominicsayers/mailchimp_api_v3)
 [![Security](https://hakiri.io/github/dominicsayers/mailchimp_api_v3/develop.svg)](https://hakiri.io/github/dominicsayers/mailchimp_api_v3/develop)
 
@@ -90,7 +90,7 @@ end
 
 ### Contributing
 
-[![Developer](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](http://xenapto.com)
+[![Developer](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](https://www.dominicsayers.com)
 
 1.  Fork it
 1.  Create your feature branch (`git checkout -b my-new-feature`)
