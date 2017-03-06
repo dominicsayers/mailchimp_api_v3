@@ -1,5 +1,5 @@
 ## Mailchimp API v3
-[![Gem Version](https://badge.fury.io/rb/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
+[![Gem Version 0.2.15](https://badge.fury.io/rb/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
 [![Gem downloads](https://img.shields.io/gem/dt/mailchimp_api_v3.svg)](https://rubygems.org/gems/mailchimp_api_v3)
 [![Build status](https://img.shields.io/circleci/project/dominicsayers/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/dominicsayers/mailchimp_api_v3)
 [![Code quality](http://img.shields.io/codeclimate/github/dominicsayers/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/dominicsayers/mailchimp_api_v3)
