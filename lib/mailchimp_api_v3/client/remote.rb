@@ -27,7 +27,7 @@ module Mailchimp
 
       def managed_remote(path, method = :get, options = {}, payload = nil)
         headers_and_params = headers.merge params_from(options)
-        YAML.load(naked_remote("#{url_stub}#{path}", method, headers_and_params, payload) || '')
+        YAML.safe_load(naked_remote("#{url_stub}#{path}", method, headers_and_params, payload) || '')
       rescue *RETRY_EXCEPTIONS => e
         @retries ||= 0
         raise e if (@retries += 1) > 3
@@ -37,16 +37,18 @@ module Mailchimp
       end
 
       def managed_remote_exception(e)
-        data = YAML.load(e.http_body) if e.respond_to? :http_body
+        data = YAML.safe_load(e.http_body) if e.respond_to? :http_body
         exception_class_name = e.class.to_s
 
         if Mailchimp::Exception::MAPPED_EXCEPTIONS.key? exception_class_name
           raise Mailchimp::Exception::MAPPED_EXCEPTIONS[exception_class_name], data
-        elsif exception_class_name == 'RestClient::BadRequest'
-          Mailchimp::Exception.parse_invalid_resource_exception data
-        else
-          raise e
         end
+
+        if exception_class_name == Mailchimp::Exception::BAD_REQUEST
+          return Mailchimp::Exception.parse_invalid_resource_exception data
+        end
+
+        raise e
       end
 
       def naked_remote(url, method, headers_and_params, payload = nil)

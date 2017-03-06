@@ -37,5 +37,7 @@ module Mailchimp
       'RestClient::ResourceNotFound' => NotFound,
       'RestClient::Unauthorized' => APIKeyError
     }.freeze
+
+    BAD_REQUEST = 'RestClient::BadRequest'.freeze
   end
 end

@@ -3,6 +3,11 @@ AllCops:
   Exclude:
     - 'tmp/**/*'
 
+Metrics/BlockLength:
+  CountComments: false  # count full line comments?
+  Exclude:
+    - '**/*_spec.rb'
+
 StringLiterals:
   EnforcedStyle: single_quotes
   Enabled: true
