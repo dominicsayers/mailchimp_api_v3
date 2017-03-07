@@ -6,8 +6,6 @@ module Mailchimp
     def self.get(client, collection_path, id)
       data = client.get "#{collection_path}/#{id}"
       data ? new(client, data, collection_path) : nil
-    rescue Mailchimp::Exception::NotFound
-      nil
     end
 
     # Instance methods
@@ -16,7 +14,6 @@ module Mailchimp
       @client = client
       @data = data
       @collection_path = collection_path
-      #- puts @data # debug
     end
 
     def update(new_data)

@@ -34,7 +34,7 @@ module Mailchimp
     MissingId = Class.new(RuntimeError)
 
     MAPPED_EXCEPTIONS = {
-      'RestClient::ResourceNotFound' => NotFound,
+      'RestClient::NotFound' => NotFound,
       'RestClient::Unauthorized' => APIKeyError
     }.freeze
 

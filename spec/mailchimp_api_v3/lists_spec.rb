@@ -10,4 +10,12 @@ describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   it 'has a count' do
     expect(lists.count).to eq 4
   end
+
+  it 'returns a list by id' do
+    expect(Mailchimp.connect.lists('aa923b0da6')).to be_a Mailchimp::List
+  end
+
+  it 'handles a non-existent id' do
+    expect(Mailchimp.connect.lists('beef')).to be_nil
+  end
 end
