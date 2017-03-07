@@ -88,6 +88,37 @@ list.members.find_in_pages do |members|
 end
 ```
 
+### Exception handling
+
+The gem will raise an exception if it encounters a condition where it cannot continue. All exceptions will be subclasses
+of `Mailchimp::Exception` as follows:
+
+- Mailchimp::Exception
+    - DataException
+    - APIKeyError
+    - NotFound
+    - Duplicate
+    - MissingField
+    - BadRequest
+    - UnknownAttribute
+    - MissingId
+
+Exceptions have a `message` as usual, but also pass on the following properties from the information returned by the
+Mailchimp API: `type`, `title`, `errors` (which, if preent, is an array). For example:
+
+```
+rescue Mailchimp::Exception => e
+  puts e.message
+  puts e.type
+  puts e.title
+
+  e.errors.each do |error|
+    puts error['field']
+    puts error['message']
+  end if e.errors
+end
+```
+
 ### Contributing
 
 [![Developer](http://img.shields.io/badge/developer-awesome-brightgreen.svg?style=flat)](https://www.dominicsayers.com)
