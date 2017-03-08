@@ -104,7 +104,7 @@ of `Mailchimp::Exception` as follows:
     - MissingId
 
 Exceptions have a `message` as usual, but also pass on the following properties from the information returned by the
-Mailchimp API: `type`, `title`, `errors` (which, if preent, is an array). For example:
+Mailchimp API: `type`, `title`, `errors` (which, if present, is an array). For example:
 
 ```
 rescue Mailchimp::Exception => e
