@@ -18,6 +18,10 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
     expect(member.to_s).to eq 'Ann Example <ann@sayers.cc>'
   end
 
+  it 'handles unexpected data' do
+    expect { list.members.create(0) }.to raise_error(Mailchimp::Exception::BadRequest, 'Expecting a Hash, received a FixNum: 0')
+  end
+
   context 'updates name fields correctly' do
     it 'uses friendly name fields' do
       updated_member = member.update name: 'Billy Bonkers'
