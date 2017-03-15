@@ -31,6 +31,11 @@ class Hash
       delete k
     end
   end
+
+  def subhash?(hash)
+    hash.each { |k, v| return false if self[k] != v }
+    true
+  end
 end
 
 class String

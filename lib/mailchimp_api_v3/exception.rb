@@ -11,7 +11,7 @@ module Mailchimp
 
     class DataException < RuntimeError
       def initialize(data)
-        @data = data
+        @data = data.is_a?(String) ? { 'detail' => data } : data
         super detail
       end
 
