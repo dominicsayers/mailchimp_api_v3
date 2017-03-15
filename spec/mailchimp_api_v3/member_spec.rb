@@ -19,7 +19,17 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
   end
 
   it 'handles unexpected data' do
-    expect { list.members.create(0) }.to raise_error(Mailchimp::Exception::BadRequest, 'Expecting a Hash, received a FixNum: 0')
+    expect { list.members.create(0) }.to raise_error(
+      Mailchimp::Exception::BadRequest, 'Expecting a Hash, received a Integer: 0'
+    )
+  end
+
+  it 'matches supplied comparison data' do
+    expect(member.matches?(name: name, email_address: 'ann@sayers.cc')).to be_truthy
+  end
+
+  it "doesn't match mismatched comparison data" do
+    expect(member.matches?(name: name, vip: true)).to be_falsey
   end
 
   context 'updates name fields correctly' do

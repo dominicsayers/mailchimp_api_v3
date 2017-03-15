@@ -37,8 +37,8 @@ module Mailchimp
     end
 
     def same?(thing, other_thing)
-      return thing.casecmp(other_thing).zero? if thing.respond_to? :casecmp
-      return thing.subhash?(other_thing)      if thing.respond_to? :subhash?
+      return thing.casecmp(other_thing.to_s).zero? if thing.is_a? String
+      return thing.subhash?(other_thing.to_h)      if thing.is_a? Hash
       thing == other_thing
     end
 
