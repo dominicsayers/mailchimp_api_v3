@@ -4,7 +4,7 @@
 [![Build status](https://img.shields.io/circleci/project/dominicsayers/mailchimp_api_v3/develop.svg)](https://circleci.com/gh/dominicsayers/mailchimp_api_v3)
 [![Code quality](http://img.shields.io/codeclimate/github/dominicsayers/mailchimp_api_v3.svg?style=flat)](https://codeclimate.com/github/dominicsayers/mailchimp_api_v3)
 [![Coverage Status](https://coveralls.io/repos/github/dominicsayers/mailchimp_api_v3/badge.svg?branch=develop)](https://coveralls.io/github/dominicsayers/mailchimp_api_v3?branch=develop)
-[![Dependency Status](https://dependencyci.com/github/dominicsayers/mailchimp_api_v3/badge)](https://dependencyci.com/github/dominicsayers/mailchimp_api_v3)
+[![Dependency Status](https://gemnasium.com/badges/github.com/dominicsayers/mailchimp_api_v3.svg)](https://gemnasium.com/github.com/dominicsayers/mailchimp_api_v3)
 [![Security](https://hakiri.io/github/dominicsayers/mailchimp_api_v3/develop.svg)](https://hakiri.io/github/dominicsayers/mailchimp_api_v3/develop)
 
 A simple gem to interact with Mailchimp through the Mailchimp API v3.
