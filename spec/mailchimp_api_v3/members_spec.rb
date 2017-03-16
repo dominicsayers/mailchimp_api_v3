@@ -1,12 +1,10 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
+# frozen_string_literal: true
 describe Mailchimp::List::Members do
   context 'paging', vcr: { cassette_name: 'members_paging', allow_playback_repeats: true } do
     let(:page_size) { 10 }
-    let(:member_count) { 37 }
-    let(:list) { Mailchimp.connect.lists.first }
+    let(:member_count) { 19 }
+    let(:list) { Mailchimp.connect.lists 'API test list' }
     let(:members) { list.members 'page_size' => page_size }
 
     it 'is the expected class' do
@@ -20,7 +18,7 @@ describe Mailchimp::List::Members do
     it 'returns pages of members' do
       counts = []
       members.find_in_pages { |p| counts << p.count }
-      expect(counts).to eq [page_size, page_size, page_size, 7]
+      expect(counts).to eq [page_size, 9]
     end
 
     it 'returns all members by paging' do
@@ -68,11 +66,51 @@ describe Mailchimp::List::Members do
       end
     end
 
+    context '#first_or_create with interest categories', vcr: { cassette_name: 'members_with_interest_categories' } do
+      let(:list) { Mailchimp.connect.lists 'My first list' }
+      let(:members) { list.members }
+      let(:interest_categories) { list.interest_categories }
+
+      before do
+        data = { 'title' => 'Days', 'type' => 'checkboxes' }
+        interest_categories.create data
+      end
+
+      it 'can add and delete a new instance' do
+        name = 'Cat Sayers'
+        interests = { interest_categories.first.id => true }
+        data = { name: name, email_address: 'cat@sayers.cc', status: 'subscribed', interests: interests }
+
+        # #create
+        expect { members.create data }.to change { list.members.count }.by(1)
+        expect { members.create data }.to raise_error Mailchimp::Exception::Duplicate
+
+        # #find_by
+        member = list.members.find_by name: name
+        expect(member).to be_a Mailchimp::List::Member
+        expect(member.name).to eq name
+
+        # #first_or_create finds the same instance
+        member2 = list.members.first_or_create data
+        expect(member.id).to eq(member2.id)
+
+        # #delete
+        expect { member.delete }.to change { list.members.count }.by(-1)
+
+        # #first_or_create creates a new instance
+        name = 'Dan Sayers'
+        data = { name: name, email_address: 'dan@sayers.cc', status: 'subscribed' }
+        member = members.first_or_create data
+        expect(member.name).to eq name
+        member.delete # Tidy up
+      end
+    end
+
     context '#create_or_update', vcr: { cassette_name: 'members_create_or_update' } do
       let(:list) { Mailchimp.connect.lists 'My first list' }
       let(:members) { list.members }
 
-      it 'creates when no match is found, udates otherwise' do
+      it 'creates when no match is found, updates otherwise' do
         name = 'Cat Sayers'
         data = { name: name, email_address: 'cat@sayers.cc', status: 'subscribed' }
 

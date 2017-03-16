@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0
+    uri: https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0
     body:
       encoding: US-ASCII
       string: ''
@@ -11,10 +11,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
+      Authorization:
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
+      Host:
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 301
@@ -27,9 +29,9 @@ http_interactions:
       Content-Length:
       - '242'
       Location:
-      - http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+      - http://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/
       Date:
-      - Tue, 07 Jul 2015 12:02:22 GMT
+      - Thu, 04 Aug 2016 14:57:20 GMT
       Connection:
       - keep-alive
     body:
@@ -40,13 +42,13 @@ http_interactions:
         <title>301 Moved Permanently</title>
         </head><body>
         <h1>Moved Permanently</h1>
-        <p>The document has moved <a href="http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/">here</a>.</p>
+        <p>The document has moved <a href="http://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/">here</a>.</p>
         </body></html>
     http_version:
-  recorded_at: Tue, 07 Jul 2015 12:02:22 GMT
+  recorded_at: Thu, 04 Aug 2016 14:57:20 GMT
 - request:
     method: get
-    uri: http://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/
+    uri: http://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/
     body:
       encoding: US-ASCII
       string: ''
@@ -55,12 +57,12 @@ http_interactions:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      Authorization:
-      - apikey <%= ENV['MAILCHIMP_API_KEY'] %>
       User-Agent:
       - Mailchimp API v3 Ruby gem https://rubygems.org/gems/mailchimp_api_v3
-      Cookie:
-      - ''
+      Authorization:
+      - apikey <%= ENV.fetch('MAILCHIMP_API_KEY', 'vcr_playback-us11') %>
+      Host:
+      - <%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com
   response:
     status:
       code: 200
@@ -71,22 +73,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '2003'
+      - '3270'
       X-Request-Id:
-      - 54dc6a42-1f8d-4465-a513-8a42ffebdbab
+      - 3cda2989-c364-4dee-bdd0-94bf46bd3c4e
       Link:
-      - <https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json>; rel="describedBy"
+      - <https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Root.json>; rel="describedBy"
       Vary:
       - Accept-Encoding
       Date:
-      - Tue, 07 Jul 2015 12:02:22 GMT
+      - Thu, 04 Aug 2016 14:57:20 GMT
       Connection:
       - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: ASCII-8BIT
-      string: '{"account_id":"1dbca289fd41b54838bcbb501","account_name":"InSite Arts","contact":{"company":"InSite
+      string: '{"account_id":"1dbca289fd41b54838bcbb501","account_name":"InSite Arts","email":"sam@sayers.cc","username":"samsayers","role":"owner","contact":{"company":"InSite
         Arts","addr1":"300 Burdett Road","addr2":"London","city":"London","state":"","zip":"E14
-        7DQ","country":"GB"},"last_login":"2015-07-07 11:24:31","total_subscribers":2,"_links":[{"rel":"self","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Root.json"},{"rel":"lists","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/lists","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Lists/Collection.json"},{"rel":"reports","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/reports","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Reports/Collection.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/CollectionLinks/Reports.json"},{"rel":"conversations","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/conversations","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Conversations/Collection.json"},{"rel":"campaigns","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/campaigns","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Campaigns/Collection.json","schema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/CollectionLinks/Campaigns.json"},{"rel":"automations","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/automations","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Automations/Collection.json"},{"rel":"templates","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/templates","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/Templates/Collection.json"},{"rel":"file-manager","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/file-manager","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/FileManager/Namespace.json"},{"rel":"authorized-apps","href":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/3.0/authorized-apps","method":"GET","targetSchema":"https://<%= ENV['MAILCHIMP_DC'] %>.api.mailchimp.com/schema/3.0/AuthorizedApps/Collection.json"}]}'
+        7DQ","country":"GB"},"pro_enabled":false,"last_login":"2016-08-04T14:25:25+00:00","total_subscribers":27,"industry_stats":{"open_rate":0.21842484737161,"bounce_rate":0.015938935487191,"click_rate":0.020519217237966},"_links":[{"rel":"self","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Root.json"},{"rel":"lists","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/lists","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Lists/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Lists.json"},{"rel":"reports","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/reports","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Reports/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Reports.json"},{"rel":"conversations","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/conversations","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Conversations/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Conversations.json"},{"rel":"campaigns","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/campaigns","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Campaigns/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Campaigns.json"},{"rel":"automations","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/automations","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Automations/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Automations.json"},{"rel":"templates","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/templates","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Templates/Collection.json","schema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CollectionLinks/Templates.json"},{"rel":"file-manager","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/file-manager","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/FileManager/Namespace.json"},{"rel":"authorized-apps","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/authorized-apps","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/AuthorizedApps/Collection.json"},{"rel":"batches","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/batches","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Batches/Collection.json"},{"rel":"template-folders","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/template-folders","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/TemplateFolders/Collection.json"},{"rel":"campaign-folders","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/campaign-folders","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/CampaignFolders/Collection.json"},{"rel":"ecommerce","href":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/3.0/ecommerce","method":"GET","targetSchema":"https://<%= ENV.fetch('MAILCHIMP_DC', 'us11') %>.api.mailchimp.com/schema/3.0/Ecommerce/Namespace.json"}]}'
     http_version:
-  recorded_at: Tue, 07 Jul 2015 12:02:22 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Thu, 04 Aug 2016 14:57:20 GMT
+recorded_with: VCR 3.0.3

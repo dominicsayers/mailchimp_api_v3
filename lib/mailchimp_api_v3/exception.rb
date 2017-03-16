@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mailchimp
   module Exception
     def self.parse_invalid_resource_exception(data)
@@ -10,7 +11,7 @@ module Mailchimp
 
     class DataException < RuntimeError
       def initialize(data)
-        @data = data
+        @data = data.is_a?(String) ? { 'detail' => data } : data
         super detail
       end
 
@@ -33,8 +34,10 @@ module Mailchimp
     MissingId = Class.new(RuntimeError)
 
     MAPPED_EXCEPTIONS = {
-      'RestClient::ResourceNotFound' => NotFound,
+      'RestClient::NotFound' => NotFound,
       'RestClient::Unauthorized' => APIKeyError
     }.freeze
+
+    BAD_REQUEST = 'RestClient::BadRequest'.freeze
   end
 end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mailchimp
   class List
     class Member < Instance
@@ -60,7 +61,8 @@ module Mailchimp
       CHILD_CLASS = Member
 
       def create(data)
-        super Mailchimp::List::Member.parse_name_from(data)
+        return super Mailchimp::List::Member.parse_name_from(data) if data.respond_to? :deep_stringify_keys
+        raise Mailchimp::Exception::BadRequest, "Expecting a Hash, received a #{data.class}: #{data}"
       end
 
       def create_or_update(data)

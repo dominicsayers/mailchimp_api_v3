@@ -1,7 +1,5 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
+# frozen_string_literal: true
 describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
@@ -18,6 +16,20 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
 
   it 'has a string repsentation' do
     expect(member.to_s).to eq 'Ann Example <ann@sayers.cc>'
+  end
+
+  it 'handles unexpected data' do
+    expect { list.members.create(0) }.to raise_error(
+      Mailchimp::Exception::BadRequest, 'Expecting a Hash, received a Integer: 0'
+    )
+  end
+
+  it 'matches supplied comparison data' do
+    expect(member.matches?(name: name, email_address: 'ann@sayers.cc')).to be_truthy
+  end
+
+  it "doesn't match mismatched comparison data" do
+    expect(member.matches?(name: name, vip: true)).to be_falsey
   end
 
   context 'updates name fields correctly' do

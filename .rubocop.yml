@@ -3,6 +3,11 @@ AllCops:
   Exclude:
     - 'tmp/**/*'
 
+Metrics/BlockLength:
+  CountComments: false  # count full line comments?
+  Exclude:
+    - '**/*_spec.rb'
+
 StringLiterals:
   EnforcedStyle: single_quotes
   Enabled: true
@@ -32,7 +37,7 @@ LineLength:
 Style/SymbolArray:
   Description: 'Use %i or %I for arrays of symbols.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-i'
-  Enabled: false # Only available in Ruby 2.0+
+  Enabled: true # Only available in Ruby 2.0+
 
 Style/ExtraSpacing:
   Description: 'Do not use unnecessary spacing.'

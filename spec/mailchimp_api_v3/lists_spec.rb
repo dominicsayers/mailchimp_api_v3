@@ -1,7 +1,5 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
+# frozen_string_literal: true
 describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   let(:lists) { Mailchimp.connect.lists }
 
@@ -10,6 +8,14 @@ describe Mailchimp::Lists, vcr: { cassette_name: 'lists' } do
   end
 
   it 'has a count' do
-    expect(lists.count).to eq 1
+    expect(lists.count).to eq 4
+  end
+
+  it 'returns a list by id' do
+    expect(Mailchimp.connect.lists('aa923b0da6')).to be_a Mailchimp::List
+  end
+
+  it 'handles a non-existent id' do
+    expect(Mailchimp.connect.lists('beef')).to be_nil
   end
 end

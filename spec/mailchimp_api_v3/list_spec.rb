@@ -1,7 +1,5 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
+# frozen_string_literal: true
 describe Mailchimp::List, vcr: { cassette_name: 'list' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
@@ -59,7 +57,7 @@ describe Mailchimp::List, vcr: { cassette_name: 'list' } do
     end
 
     it 'gets a member by name' do
-      member = list.members 'Ann Example'
+      member = list.members 'William Bonkers'
       expect(member).to be_a Mailchimp::List::Member
       expect(member.id).to eq id
     end

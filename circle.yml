@@ -1,8 +1,17 @@
 ---
 machine:
   ruby:
-    version: 2.1.9
-notify:
-  webhooks:
-    # A list of hook hashes, containing the url field
-    - url: https://coveralls.io/webhook?repo_token=SFdYC8cgEnwclAC8K7dzccQ5e16ZBDlPj
+    version: 2.4.0
+dependencies:
+  pre:
+    - echo "export rvm_ignore_gemsets_flag=1" >> ~/.rvmrc
+    - gem update --system
+    - gem install bundler
+  override:
+    - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --full-index
+test:
+  override:
+    - RAILS_ENV=test bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml:
+        parallel: true
+        files:
+          - spec/**/*.rb

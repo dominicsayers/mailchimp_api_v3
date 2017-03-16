@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'mailchimp_api_v3/version'
 require 'mailchimp_api_v3/collection/paging'
 require 'mailchimp_api_v3/collection'
@@ -29,6 +30,11 @@ class Hash
       hash[k] = self[k] if key?(k)
       delete k
     end
+  end
+
+  def subhash?(hash)
+    hash.each { |k, v| return false if self[k] != v }
+    true
   end
 end
 

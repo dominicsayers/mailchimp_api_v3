@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mailchimp
   class List
     class InterestCategory

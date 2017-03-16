@@ -1,7 +1,5 @@
 # encoding: utf-8
-require 'spec_helper'
-require 'mailchimp_api_v3'
-
+# frozen_string_literal: true
 describe Mailchimp::List::InterestCategory::Interests, vcr: { cassette_name: 'interests' } do
   let(:list) { Mailchimp.connect.lists.first }
   let(:title) { 'Days' }

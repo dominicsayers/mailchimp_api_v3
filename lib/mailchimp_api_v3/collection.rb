@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Mailchimp
   class Collection < Array
     include Paging
