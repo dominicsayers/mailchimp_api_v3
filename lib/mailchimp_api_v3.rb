@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'mailchimp_api_v3/version'
 require 'mailchimp_api_v3/collection/paging'
 require 'mailchimp_api_v3/collection'
@@ -45,5 +46,13 @@ class String
 
   def convert_to_id
     OpenSSL::Digest.digest('MD5', downcase).unpack('H*').first
+  end
+end
+
+module YAML
+  unless respond_to?(:safe_load)
+    def self.safe_load(*args)
+      load(*args)
+    end
   end
 end

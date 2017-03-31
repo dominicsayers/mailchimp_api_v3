@@ -1,5 +1,6 @@
 # encoding: utf-8
 # frozen_string_literal: true
+
 describe Mailchimp::Account, vcr: { cassette_name: 'account' } do
   it 'is the expected class' do
     expect(Mailchimp.connect.account).to be_a Mailchimp::Account

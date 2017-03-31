@@ -1,0 +1,2 @@
+#!/bin/sh
+bundle exec irb -rubygems -I lib -r mailchimp_api_v3.rb

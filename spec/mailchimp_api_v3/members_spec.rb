@@ -1,5 +1,6 @@
 # encoding: utf-8
 # frozen_string_literal: true
+
 describe Mailchimp::List::Members do
   context 'paging', vcr: { cassette_name: 'members_paging', allow_playback_repeats: true } do
     let(:page_size) { 10 }

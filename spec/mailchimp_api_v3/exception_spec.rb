@@ -1,5 +1,6 @@
 # encoding: utf-8
 # frozen_string_literal: true
+
 describe Mailchimp::Exception::APIKeyError, vcr: { cassette_name: 'exception' } do
   let(:bad_key) { 'xxxxxxxxxx-us11' }
 

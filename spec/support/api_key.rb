@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'yaml'
 
 unless ENV['MAILCHIMP_API_KEY']

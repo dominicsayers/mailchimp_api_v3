@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Mailchimp
   class Client < Instance
     include Remote

@@ -1,5 +1,6 @@
 # encoding: utf-8
 # frozen_string_literal: true
+
 describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
   let(:lists) { Mailchimp.connect.lists }
   let(:list) { lists.first }
@@ -20,7 +21,7 @@ describe Mailchimp::List::Member, vcr: { cassette_name: 'member' } do
 
   it 'handles unexpected data' do
     expect { list.members.create(0) }.to raise_error(
-      Mailchimp::Exception::BadRequest, 'Expecting a Hash, received a Integer: 0'
+      Mailchimp::Exception::BadRequest, "Expecting a Hash, received a #{0.class}: 0"
     )
   end
 

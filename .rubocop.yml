@@ -1,5 +1,7 @@
 ---
 AllCops:
+  TargetRubyVersion: 2.0
+  DisplayCopNames: true
   Exclude:
     - 'tmp/**/*'
 
@@ -46,3 +48,8 @@ Style/ExtraSpacing:
 Lint/LiteralInInterpolation:
   Description: 'Avoid interpolating literals in strings'
   AutoCorrect: true
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+

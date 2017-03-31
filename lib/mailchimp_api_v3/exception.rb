@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Mailchimp
   module Exception
     def self.parse_invalid_resource_exception(data)
