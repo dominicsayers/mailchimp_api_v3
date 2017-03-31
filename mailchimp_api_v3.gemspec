@@ -13,9 +13,9 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://github.com/dominicsayers/mailchimp_api_v3'
   spec.license = 'BSD-2-Clause'
 
-  spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR).reject { |file| file =~ %r{^spec/} }
   spec.executables = spec.files.grep(%r{^bin\/}) { |f| File.basename(f) }
-  spec.test_files = spec.files.grep(%r{^(test|spec|features|coverage)\/})
+  spec.test_files = spec.files.grep(%r{^(test|spec|features|coverage)/})
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'rest-client', '~> 2' # https://github.com/rest-client/rest-client/issues/369
